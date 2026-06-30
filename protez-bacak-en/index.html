@@ -265,43 +265,72 @@
       </div>
     </section>
 
-    <!-- ================= SOCIAL PROOF ================= -->
+    <!-- ================= PATIENTS + INSTAGRAM ================= -->
     <section class="section" id="patients">
       <div class="container">
         <div class="section__head">
           <span class="eyebrow">Real patients, real results</span>
           <h2>They walked again. You can too.</h2>
+          <p class="lead">From first fitting to walking the streets of Istanbul — follow our patients' journeys.</p>
         </div>
-        <div class="proof">
-          <div class="photos">
-            <img src="assets/img/patient-1.jpg" alt="Luxmed patient walking with a prosthetic leg" loading="lazy" />
-            <img src="assets/img/patient-2.jpg" alt="Luxmed patient fitted with a prosthetic leg" loading="lazy" />
-            <img src="assets/img/patient-3.jpg" alt="Luxmed patients together after fitting" loading="lazy" />
+
+        <div class="social">
+          <!-- Sol: hasta foto galerisi -->
+          <div class="social__photos">
+            <figure class="ph ph--tall"><img src="assets/img/patient-3.jpg" alt="Luxmed patients together after fitting their prosthetic legs" loading="lazy" /></figure>
+            <figure class="ph"><img src="assets/img/patient-1.jpg" alt="Luxmed patient walking with a prosthetic leg" loading="lazy" /></figure>
+            <figure class="ph"><img src="assets/img/patient-2.jpg" alt="Luxmed patient fitted with a prosthetic leg" loading="lazy" /></figure>
           </div>
-          <div>
-            <!-- TODO: Google yorumlarını gerçek metinlerle değiştir (Maps'ten). -->
-            <div class="reviews">
-              <div class="review">
-                <div class="stars">★★★★★</div>
-                <p>“The team supported me at every step. I'm back to my daily life.”</p>
-                <span class="who">Verified Google review</span>
-              </div>
-              <div class="review">
-                <div class="stars">★★★★★</div>
-                <p>“They arranged everything — airport, hotel, fitting. Professional from start to finish.”</p>
-                <span class="who">International patient</span>
-              </div>
+
+          <!-- Sağ: Instagram reel + CTA -->
+          <aside class="social__ig">
+            <div class="ig-card">
+              <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DEelS0Asrmw/?utm_source=ig_embed" data-instgrm-version="14" style="background:#FFF;border:0;border-radius:14px;margin:0;padding:0;width:100%"></blockquote>
             </div>
-            <div class="proof__cta">
-              <a class="btn btn--ghost" href="https://maps.google.com/maps?q=Luxmed%20Protez" target="_blank" rel="noopener" data-track="cta_reviews">Read Google reviews</a>
-              <a class="btn btn--ghost" href="https://www.instagram.com/luxmedprosthetic/" target="_blank" rel="noopener" data-track="cta_instagram">See us on Instagram</a>
+            <div class="social__igtext">
+              <h3>@luxmedprosthetic</h3>
+              <p>See real fittings, first steps and patient stories on our Instagram.</p>
+              <a class="btn btn--primary" href="https://www.instagram.com/luxmedprosthetic/" target="_blank" rel="noopener" data-track="cta_instagram">Follow on Instagram</a>
             </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= GOOGLE REVIEWS ================= -->
+    <section class="section section--paper2" id="reviews">
+      <div class="container">
+        <div class="section__head">
+          <span class="eyebrow">What patients say</span>
+          <h2>Rated by patients on Google</h2>
+          <div class="g-rating">
+            <span class="g-logo" aria-hidden="true"><span style="color:#4285F4">G</span><span style="color:#EA4335">o</span><span style="color:#FBBC05">o</span><span style="color:#4285F4">g</span><span style="color:#34A853">l</span><span style="color:#EA4335">e</span></span>
+            <span class="g-stars">★★★★★</span>
+            <span class="g-reviewsnote">Verified reviews</span>
           </div>
         </div>
 
-        <!-- Instagram reel -->
-        <div class="ig-embed" style="margin-top:2.5rem">
-          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DEelS0Asrmw/?utm_source=ig_embed" data-instgrm-version="14" style="background:#FFF;border:0;border-radius:14px;margin:0;padding:0;width:100%"></blockquote>
+        <!-- TODO: Aşağıdaki yorumları gerçek Google Maps yorumlarıyla değiştir. -->
+        <div class="reviews-grid">
+          <article class="rcard">
+            <div class="rcard__top"><span class="stars">★★★★★</span><span class="g-mark" aria-hidden="true">G</span></div>
+            <p>“The team supported me at every step. I'm back to my daily life and walking with confidence.”</p>
+            <footer><span class="rcard__name">Verified patient</span></footer>
+          </article>
+          <article class="rcard">
+            <div class="rcard__top"><span class="stars">★★★★★</span><span class="g-mark" aria-hidden="true">G</span></div>
+            <p>“They arranged everything — airport, hotel and fitting. Professional from start to finish.”</p>
+            <footer><span class="rcard__name">International patient</span></footer>
+          </article>
+          <article class="rcard">
+            <div class="rcard__top"><span class="stars">★★★★★</span><span class="g-mark" aria-hidden="true">G</span></div>
+            <p>“Excellent care and a comfortable socket. I felt looked after the whole time I was in Istanbul.”</p>
+            <footer><span class="rcard__name">Verified patient</span></footer>
+          </article>
+        </div>
+
+        <div class="reviews-cta">
+          <a class="btn btn--ghost btn--lg" href="https://maps.google.com/maps?q=Luxmed%20Protez%20Topkapi" target="_blank" rel="noopener" data-track="cta_reviews">Read all Google reviews</a>
         </div>
       </div>
     </section>
