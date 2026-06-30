@@ -31,7 +31,12 @@
 }
 
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; overflow-x: clip; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; overflow-x: clip; scroll-padding-top: 84px; }
+
+/* scroll-reveal (JS açıldığında) */
+.js [data-reveal] { opacity: 0; transform: translateY(24px); }
+.js [data-reveal].in { opacity: 1; transform: none; transition: opacity .7s ease, transform .7s cubic-bezier(.2,.7,.2,1); }
+@media (prefers-reduced-motion: reduce) { .js [data-reveal] { opacity: 1; transform: none; } }
 
 body {
   margin: 0;
@@ -102,21 +107,26 @@ a  { color: var(--green); text-decoration: none; }
 .btn--lg { font-size: 1.05rem; padding: 1.15em 2em; }
 .btn svg { width: 1.15em; height: 1.15em; }
 
-/* ---- Header ---- */
+/* ---- Header (hero üzerinde şeffaf → kaydırınca opak) ---- */
 .header {
-  position: sticky; top: 0; z-index: 50;
-  background: rgba(243,235,217,0.85);
-  backdrop-filter: saturate(140%) blur(10px);
-  border-bottom: 1px solid var(--line);
+  position: fixed; inset-inline: 0; top: 0; z-index: 50;
+  background: transparent; border-bottom: 1px solid transparent; color: #fff;
+  transition: background .35s ease, border-color .35s ease, color .35s ease;
 }
-.header__inner { display: flex; align-items: center; justify-content: space-between; gap: 1rem; min-height: 68px; }
+.header__inner { display: flex; align-items: center; justify-content: space-between; gap: 1rem; min-height: 72px; }
 .brand { display: flex; align-items: center; gap: 0.6rem; }
-.brand img { height: 30px; width: auto; }
-.brand__name { font-family: var(--serif); font-size: 1.25rem; letter-spacing: -0.01em; color: var(--ink); }
+.brand img { height: 30px; width: auto; transition: filter .35s ease; }
+.brand__name { font-family: var(--serif); font-size: 1.25rem; letter-spacing: -0.01em; color: inherit; }
 .header__actions { display: flex; align-items: center; gap: 0.5rem; }
-.header__phone { display: none; font-weight: 600; font-size: 0.95rem; color: var(--ink); padding: 0.5em 0.6em; }
-.header__phone:hover { color: var(--green); }
+.header__phone { display: none; font-weight: 600; font-size: 0.95rem; color: inherit; padding: 0.5em 0.6em; opacity: .92; }
+.header__phone:hover { opacity: 1; }
 .header__cta { padding: 0.7em 1.2em; font-size: 0.92rem; }
+/* hero üzerindeyken logo beyaz */
+.header:not(.is-scrolled) .brand img { filter: brightness(0) invert(1); }
+.header.is-scrolled {
+  background: rgba(243,235,217,0.92); backdrop-filter: saturate(140%) blur(10px);
+  border-bottom-color: var(--line); color: var(--ink);
+}
 .icon-btn {
   display: inline-flex; align-items: center; justify-content: center;
   width: 42px; height: 42px; border-radius: var(--radius);
@@ -124,43 +134,61 @@ a  { color: var(--green); text-decoration: none; }
 }
 .icon-btn svg { width: 20px; height: 20px; }
 
-/* ---- Hero ---- */
+/* ---- Hero — tam ekran video + filtre ---- */
 .hero {
-  padding-block: clamp(2.5rem, 6vw, 5rem) var(--section-y);
+  position: relative; min-height: 100svh; display: flex; align-items: flex-end;
+  color: #fff; overflow: hidden; isolation: isolate;
+}
+.hero__bg { position: absolute; inset: 0; z-index: -2; }
+.hero__bg video { width: 100%; height: 100%; object-fit: cover; }
+.hero__overlay {
+  position: absolute; inset: 0; z-index: -1;
   background:
-    radial-gradient(110% 75% at 88% -10%, rgba(224,162,60,0.12), transparent 55%),
-    radial-gradient(80% 70% at -5% 0%, rgba(15,61,59,0.06), transparent 60%);
+    linear-gradient(180deg, rgba(8,30,29,0.50) 0%, rgba(8,30,29,0.28) 32%, rgba(8,30,29,0.55) 70%, rgba(8,30,29,0.90) 100%),
+    linear-gradient(95deg, rgba(8,30,29,0.72) 0%, rgba(8,30,29,0.30) 45%, rgba(8,30,29,0.05) 78%);
 }
-.hero__grid {
-  display: grid; gap: clamp(2rem, 5vw, 4rem);
-  grid-template-columns: 1fr;
-  align-items: center;
+/* hafif grain dokusu */
+.hero__overlay::after {
+  content: ""; position: absolute; inset: 0; opacity: 0.05; mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
-.hero__title { margin-bottom: 0.4em; }
-.hero__title em { font-style: italic; color: var(--green); }
-.hero__sub { margin-bottom: 2rem; }
-.hero__cta { display: flex; flex-wrap: wrap; gap: 0.8rem; margin-bottom: 2rem; }
+.hero__inner { position: relative; width: 100%; padding-block: clamp(7rem, 18vh, 12rem) clamp(3.5rem, 9vh, 6rem); }
+.hero .eyebrow { color: #F0C36B; }
+.hero__title { color: #fff; max-width: 17ch; margin-bottom: 0.5em; text-shadow: 0 2px 40px rgba(0,0,0,0.35); }
+.hero__title em { font-style: italic; color: #F2C871; }
+.hero__sub { color: rgba(255,255,255,0.92); max-width: 54ch; margin-bottom: 1.8rem; font-size: clamp(1.05rem,1.5vw,1.3rem); }
+.hero__cta { display: flex; flex-wrap: wrap; gap: 0.8rem; margin-bottom: 1.4rem; }
+.hero__reassure {
+  display: flex; flex-wrap: wrap; gap: 0.35rem 1.1rem;
+  font-size: 0.88rem; color: rgba(255,255,255,0.85); margin: 0 0 0;
+}
+.hero__reassure span { display: inline-flex; align-items: center; gap: 0.4em; }
+.hero__reassure span::before { content: "✓"; color: #F0C36B; font-weight: 700; }
 .hero__trust {
-  display: flex; flex-wrap: wrap; gap: 0.6rem 1.4rem;
-  font-size: 0.9rem; color: var(--ink-soft); padding-top: 1.4rem;
-  border-top: 1px solid var(--line);
+  display: flex; flex-wrap: wrap; gap: 0.6rem 1.6rem; margin-top: 1.8rem; padding-top: 1.6rem;
+  border-top: 1px solid rgba(255,255,255,0.20); color: rgba(255,255,255,0.92); font-size: 0.92rem;
 }
-.hero__trust span { display: inline-flex; align-items: center; gap: 0.45em; }
-.hero__trust span::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--clay); }
+.hero__trust span { display: inline-flex; align-items: center; gap: 0.5em; }
+.hero__trust span::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: #F0C36B; }
 
-/* Hero video çerçevesi */
-.hero__media { position: relative; }
-.hero__media video {
-  width: 100%; border-radius: var(--radius-lg);
-  border: 1px solid var(--line); background: var(--paper-2);
-  aspect-ratio: 16 / 10; object-fit: cover;
+/* scroll ipucu */
+.hero__scroll {
+  position: absolute; inset-block-end: 16px; inset-inline-start: 50%; transform: translateX(-50%);
+  z-index: 2; color: rgba(255,255,255,0.75); font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase;
+  display: flex; flex-direction: column; align-items: center; gap: 0.5rem; text-decoration: none;
 }
-.hero__media[data-orient="portrait"] video { aspect-ratio: 4 / 5; }
-.hero__badge {
-  position: absolute; inset-block-end: 14px; inset-inline-start: 14px;
-  background: rgba(28,27,25,0.78); color: #fff; backdrop-filter: blur(4px);
-  font-size: 0.8rem; font-weight: 500; padding: 0.5em 0.9em; border-radius: 999px;
-}
+.hero__scroll::after { content: ""; width: 1px; height: 36px; background: linear-gradient(rgba(255,255,255,0.8), transparent); animation: scrollcue 1.8s ease-in-out infinite; }
+@keyframes scrollcue { 0%,100% { opacity: .25; transform: scaleY(.55); transform-origin: top; } 50% { opacity: 1; transform: scaleY(1); transform-origin: top; } }
+
+/* giriş animasyonu (kademeli) */
+.hero__inner > * { opacity: 0; transform: translateY(20px); animation: heroIn .85s cubic-bezier(.2,.7,.2,1) forwards; }
+.hero__inner > *:nth-child(1) { animation-delay: .15s; }
+.hero__inner > *:nth-child(2) { animation-delay: .28s; }
+.hero__inner > *:nth-child(3) { animation-delay: .41s; }
+.hero__inner > *:nth-child(4) { animation-delay: .54s; }
+.hero__inner > *:nth-child(5) { animation-delay: .66s; }
+.hero__inner > *:nth-child(6) { animation-delay: .78s; }
+@keyframes heroIn { to { opacity: 1; transform: none; } }
 
 /* ---- Trust strip ---- */
 .trustbar { border-block: 1px solid var(--line); background: var(--white); }
@@ -293,8 +321,8 @@ a  { color: var(--green); text-decoration: none; }
 
 /* Foto kolajı — mobilde sade, masaüstünde katmanlı/overlap */
 .showcase__collage { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; position: relative; }
-.showcase__collage .cl { margin: 0; border-radius: 16px; overflow: hidden; border: 4px solid var(--paper); box-shadow: 0 18px 40px rgba(0,0,0,0.28); }
-.showcase__collage .cl img { width: 100%; height: 100%; object-fit: cover; aspect-ratio: 4/5; }
+.showcase__collage .cl { margin: 0; border-radius: 16px; overflow: hidden; border: 4px solid var(--paper); box-shadow: 0 18px 40px rgba(0,0,0,0.28); aspect-ratio: 4/5; }
+.showcase__collage .cl img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .cl-badge {
   display: inline-flex; align-items: baseline; gap: 0.4em; align-self: center; justify-self: start;
   background: var(--clay); color: #1a1208; border-radius: 999px;
