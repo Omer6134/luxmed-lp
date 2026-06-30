@@ -4,18 +4,19 @@
    ========================================================= */
 
 :root {
-  /* Palet — sıcak minimal */
-  --paper:   #F7F5F0;   /* ana zemin */
-  --paper-2: #EFEBE3;   /* alternatif kesit */
+  /* Palet — "warm clinical luxe": derin petrol-teal + sıcak krem + altın aksan */
+  --paper:   #F3EBD9;   /* ana zemin — sıcak krem */
+  --paper-2: #EADFC8;   /* alternatif kesit */
   --white:   #FFFFFF;
-  --ink:     #1C1B19;   /* ana metin */
-  --ink-soft:#5A574F;   /* ikincil metin */
-  --line:    #E3DFD7;   /* hairline */
-  --line-2:  #D8D3C8;
-  --green:   #2F4A3E;   /* birincil / CTA / güven */
-  --green-700:#243a30;
-  --clay:    #B5654A;   /* küçük dozda sıcak vurgu */
-  --clay-700:#9c5239;
+  --ink:     #14211F;   /* ana metin — teal-siyah */
+  --ink-soft:#54625C;   /* ikincil metin */
+  --line:    #E0D5BE;   /* hairline */
+  --line-2:  #D3C6AA;
+  --green:   #0F3D3B;   /* birincil marka / CTA / koyu kesitler (derin teal) */
+  --green-700:#0A2C2A;
+  --clay:    #E0A23C;   /* altın aksan */
+  --clay-700:#9A6A12;   /* açık zeminde okunur koyu altın */
+  --teal-400:#2E726C;   /* açık teal vurgu */
 
   /* Tipografi */
   --serif: "Fraunces", Georgia, "Times New Roman", serif;
@@ -63,7 +64,12 @@ a  { color: var(--green); text-decoration: none; }
 .container { width: 100%; max-width: var(--maxw); margin-inline: auto; padding-inline: var(--gap); }
 .section { padding-block: var(--section-y); }
 .section--paper2 { background: var(--paper-2); }
-.section--ink { background: var(--ink); color: var(--paper); }
+.section--ink {
+  background: var(--green); color: var(--paper); position: relative; isolation: isolate;
+  background-image:
+    radial-gradient(90% 70% at 100% 0%, rgba(224,162,60,0.14), transparent 60%),
+    radial-gradient(70% 60% at 0% 100%, rgba(46,114,108,0.30), transparent 60%);
+}
 
 .eyebrow {
   display: inline-block;
@@ -73,7 +79,7 @@ a  { color: var(--green); text-decoration: none; }
   color: var(--clay-700);
   margin: 0 0 1.2rem;
 }
-.section--ink .eyebrow { color: #C9A88E; }
+.section--ink .eyebrow { color: #E6BE74; }
 .lead { font-size: clamp(1.05rem, 1.5vw, 1.25rem); color: var(--ink-soft); max-width: 56ch; }
 
 /* ---- Butonlar ---- */
@@ -91,13 +97,15 @@ a  { color: var(--green); text-decoration: none; }
 .btn--whatsapp:hover { background: #25a23a; }
 .btn--ghost { background: transparent; color: var(--ink); border-color: var(--line-2); }
 .btn--ghost:hover { border-color: var(--ink); }
+.btn--gold { background: var(--clay); color: #1a1208; }
+.btn--gold:hover { background: #cf9430; }
 .btn--lg { font-size: 1.05rem; padding: 1.15em 2em; }
 .btn svg { width: 1.15em; height: 1.15em; }
 
 /* ---- Header ---- */
 .header {
   position: sticky; top: 0; z-index: 50;
-  background: rgba(247,245,240,0.85);
+  background: rgba(243,235,217,0.85);
   backdrop-filter: saturate(140%) blur(10px);
   border-bottom: 1px solid var(--line);
 }
@@ -117,7 +125,12 @@ a  { color: var(--green); text-decoration: none; }
 .icon-btn svg { width: 20px; height: 20px; }
 
 /* ---- Hero ---- */
-.hero { padding-block: clamp(2.5rem, 6vw, 5rem) var(--section-y); }
+.hero {
+  padding-block: clamp(2.5rem, 6vw, 5rem) var(--section-y);
+  background:
+    radial-gradient(110% 75% at 88% -10%, rgba(224,162,60,0.12), transparent 55%),
+    radial-gradient(80% 70% at -5% 0%, rgba(15,61,59,0.06), transparent 60%);
+}
 .hero__grid {
   display: grid; gap: clamp(2rem, 5vw, 4rem);
   grid-template-columns: 1fr;
@@ -171,9 +184,9 @@ a  { color: var(--green); text-decoration: none; }
   border: 1px solid rgba(255,255,255,0.25); border-radius: 50%;
 }
 .feature__points h3 { color: var(--paper); margin-bottom: 0.2em; font-size: 1.2rem; }
-.feature__points p { color: rgba(247,245,240,0.72); margin: 0; font-size: 0.98rem; }
-.section--ink .lead { color: rgba(247,245,240,0.8); }
-.section--ink .btn--ghost { color: var(--paper); border-color: rgba(247,245,240,0.35); }
+.feature__points p { color: rgba(243,235,217,0.72); margin: 0; font-size: 0.98rem; }
+.section--ink .lead { color: rgba(243,235,217,0.8); }
+.section--ink .btn--ghost { color: var(--paper); border-color: rgba(243,235,217,0.35); }
 .section--ink .btn--ghost:hover { border-color: var(--paper); }
 
 /* ---- Floating WhatsApp ---- */
@@ -274,17 +287,37 @@ a  { color: var(--green); text-decoration: none; }
 .why__item h3 { font-size: 1.18rem; margin-bottom: 0.35rem; }
 .why__item p { color: var(--ink-soft); font-size: 0.96rem; margin: 0; }
 
-/* ---- Sosyal kanıt: hasta foto galerisi + Instagram ---- */
-.social { display: grid; grid-template-columns: 1fr; gap: clamp(1.6rem,4vw,2.6rem); align-items: stretch; }
-.social__photos { display: grid; grid-template-columns: 1fr; gap: 0.9rem; }
-.social__photos .ph { margin: 0; border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--line); }
-.social__photos .ph img { width: 100%; height: 100%; object-fit: cover; aspect-ratio: 3/2; }
-.social__ig { display: flex; flex-direction: column; gap: 1.1rem; }
-.ig-card { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius-lg); padding: 0.6rem; flex: 1; display: flex; align-items: center; justify-content: center; min-height: 420px; }
-.ig-card .instagram-media { width: 100% !important; min-width: 0 !important; }
-.social__igtext { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius-lg); padding: 1.4rem 1.5rem; }
-.social__igtext h3 { margin-bottom: 0.3rem; }
-.social__igtext p { color: var(--ink-soft); font-size: 0.96rem; margin-bottom: 1rem; }
+/* ---- Sosyal kanıt: katmanlı foto kolajı + Instagram (teal zemin) ---- */
+.showcase { display: grid; grid-template-columns: 1fr; gap: clamp(2rem,5vw,3.5rem); align-items: center; }
+.section--ink .section__head .lead { color: rgba(243,235,217,0.82); }
+
+/* Foto kolajı — mobilde sade, masaüstünde katmanlı/overlap */
+.showcase__collage { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; position: relative; }
+.showcase__collage .cl { margin: 0; border-radius: 16px; overflow: hidden; border: 4px solid var(--paper); box-shadow: 0 18px 40px rgba(0,0,0,0.28); }
+.showcase__collage .cl img { width: 100%; height: 100%; object-fit: cover; aspect-ratio: 4/5; }
+.cl-badge {
+  display: inline-flex; align-items: baseline; gap: 0.4em; align-self: center; justify-self: start;
+  background: var(--clay); color: #1a1208; border-radius: 999px;
+  padding: 0.55em 1.1em; font-weight: 700; font-size: 0.92rem; grid-column: 1 / -1;
+}
+.cl-badge strong { font-family: var(--serif); font-size: 1.3rem; font-weight: 600; }
+
+/* Instagram — cam/altın çerçeveli kart */
+.showcase__ig { display: flex; flex-direction: column; gap: 1.2rem; }
+.ig-frame {
+  background: var(--white); border-radius: 22px; padding: 10px;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.35); position: relative;
+  min-height: 440px; display: flex; align-items: center; justify-content: center;
+}
+.ig-frame::before {
+  content: ""; position: absolute; inset: 0; border-radius: 22px; pointer-events: none;
+  border: 1px solid rgba(255,255,255,0.5);
+}
+.ig-frame .instagram-media { width: 100% !important; min-width: 0 !important; }
+.ig-meta { color: var(--paper); }
+.ig-handle { display: inline-flex; align-items: center; gap: 0.5em; font-weight: 700; font-size: 1.1rem; margin-bottom: 0.5rem; }
+.ig-dot { width: 26px; height: 26px; border-radius: 8px; background: linear-gradient(45deg,#f9ce34,#ee2a7b,#6228d7); flex: none; }
+.ig-meta p { color: rgba(243,235,217,0.78); font-size: 0.98rem; margin-bottom: 1.1rem; max-width: 42ch; }
 
 /* ---- Google yorumları ---- */
 .g-rating { display: inline-flex; align-items: center; gap: 0.7rem; margin-top: 1rem; flex-wrap: wrap; justify-content: center; }
@@ -335,13 +368,13 @@ a  { color: var(--green); text-decoration: none; }
 .hours li { display: flex; justify-content: space-between; max-width: 320px; padding: 0.5rem 0; border-bottom: 1px solid var(--line); font-size: 0.96rem; }
 
 /* Footer */
-.footer { background: var(--ink); color: rgba(247,245,240,0.75); padding-block: clamp(2.5rem,5vw,3.5rem); }
+.footer { background: var(--green-700); color: rgba(243,235,217,0.75); padding-block: clamp(2.5rem,5vw,3.5rem); }
 .footer__grid { display: grid; grid-template-columns: 1fr; gap: 1.8rem; }
 .footer h4 { color: var(--paper); font-family: var(--sans); font-size: 0.95rem; letter-spacing: 0.02em; margin: 0 0 0.7rem; }
-.footer a { color: rgba(247,245,240,0.75); }
+.footer a { color: rgba(243,235,217,0.75); }
 .footer a:hover { color: var(--paper); }
 .footer__brand .brand__name { color: var(--paper); }
-.footer__bottom { border-top: 1px solid rgba(247,245,240,0.15); margin-top: 2rem; padding-top: 1.4rem; font-size: 0.82rem; display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; justify-content: space-between; }
+.footer__bottom { border-top: 1px solid rgba(243,235,217,0.15); margin-top: 2rem; padding-top: 1.4rem; font-size: 0.82rem; display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; justify-content: space-between; }
 
 @media (min-width: 680px) {
   .products { grid-template-columns: repeat(2, 1fr); }
@@ -353,7 +386,13 @@ a  { color: var(--green); text-decoration: none; }
   .why { grid-template-columns: repeat(4, 1fr); }
   .spot { grid-template-columns: 1fr 1fr; }
   .spot--rev .spot__media { order: 2; }
-  .social { grid-template-columns: 1.25fr 0.75fr; }
+  .showcase { grid-template-columns: 1.1fr 0.9fr; }
+  /* Masaüstü: katmanlı/overlap kolaj */
+  .showcase__collage { display: block; position: relative; min-height: 520px; }
+  .showcase__collage .cl { position: absolute; border-width: 6px; }
+  .showcase__collage .cl--1 { width: 64%; top: 0; left: 0; z-index: 1; }
+  .showcase__collage .cl--2 { width: 50%; right: 2%; bottom: 0; transform: rotate(3deg); z-index: 2; }
+  .cl-badge { position: absolute; top: 6%; right: 0; z-index: 3; box-shadow: 0 12px 28px rgba(0,0,0,0.28); }
   .quote { grid-template-columns: 1.1fr 0.9fr; }
   .location { grid-template-columns: 1fr 1fr; }
   .footer__grid { grid-template-columns: 2fr 1fr 1fr; }
