@@ -114,14 +114,18 @@ a  { color: var(--green); text-decoration: none; }
   transition: background .35s ease, border-color .35s ease, color .35s ease;
 }
 .header__inner { display: flex; align-items: center; justify-content: space-between; gap: 1rem; min-height: 72px; }
-.brand { display: flex; align-items: center; gap: 0.6rem; }
-.brand img { height: 30px; width: auto; transition: filter .35s ease; }
+.brand { display: flex; align-items: center; }
+.brand img { height: 34px; width: auto; transition: filter .35s ease; }
 .brand__name { font-family: var(--serif); font-size: 1.25rem; letter-spacing: -0.01em; color: inherit; }
+/* PC menü linkleri */
+.header__nav { display: none; gap: 1.9rem; }
+.header__nav a { color: inherit; font-weight: 600; font-size: 0.96rem; opacity: 0.92; }
+.header__nav a:hover { opacity: 1; color: var(--clay); }
 .header__actions { display: flex; align-items: center; gap: 0.5rem; }
 .header__phone { display: none; font-weight: 600; font-size: 0.95rem; color: inherit; padding: 0.5em 0.6em; opacity: .92; }
 .header__phone:hover { opacity: 1; }
 .header__cta { padding: 0.7em 1.2em; font-size: 0.92rem; }
-/* hero üzerindeyken logo beyaz */
+/* hero üzerindeyken logo beyaz (kaydırınca renkli) */
 .header:not(.is-scrolled) .brand img { filter: brightness(0) invert(1); }
 .header.is-scrolled {
   background: rgba(243,235,217,0.92); backdrop-filter: saturate(140%) blur(10px);
@@ -225,20 +229,20 @@ a  { color: var(--green); text-decoration: none; }
 }
 .wa-float svg { width: 30px; height: 30px; }
 
-/* ---- Mobil sticky CTA bar ---- */
+/* ---- Mobil sticky CTA bar (2 buton) ---- */
 .mbar {
   position: fixed; inset-block-end: 0; inset-inline: 0; z-index: 55;
-  display: grid; grid-template-columns: 1fr 1fr 1fr;
+  display: grid; grid-template-columns: 1fr 1fr;
   background: var(--white); border-top: 1px solid var(--line);
-  padding: 0.5rem; gap: 0.4rem;
+  padding: 0.5rem; gap: 0.5rem;
 }
 .mbar a {
-  display: flex; flex-direction: column; align-items: center; gap: 0.2rem;
-  font-size: 0.72rem; font-weight: 600; padding: 0.4rem 0; border-radius: var(--radius);
+  display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 0.5rem;
+  font-size: 0.9rem; font-weight: 700; padding: 0.85rem 0.5rem; border-radius: var(--radius);
   color: var(--ink);
 }
-.mbar a svg { width: 20px; height: 20px; }
-.mbar a.is-primary { background: var(--green); color: #fff; }
+.mbar a svg { width: 19px; height: 19px; flex: none; }
+.mbar a.is-primary { background: var(--clay); color: #1a1208; }
 .mbar a.is-wa { background: #2bb741; color: #fff; }
 
 /* ---- Erişilebilirlik ---- */
@@ -258,8 +262,7 @@ a  { color: var(--green); text-decoration: none; }
   .trustbar__inner { grid-template-columns: repeat(4, 1fr); }
 }
 @media (min-width: 920px) {
-  .header__phone { display: inline-flex; }
-  .hero__grid { grid-template-columns: 1.05fr 0.95fr; }
+  .header__nav { display: flex; }       /* PC menü linkleri */
   .feature__grid { grid-template-columns: 0.95fr 1.05fr; }
   .wa-float { width: 60px; height: 60px; }
   .mbar { display: none; }          /* masaüstünde gizli */
@@ -267,7 +270,6 @@ a  { color: var(--green); text-decoration: none; }
 @media (max-width: 919px) {
   .wa-float { inset-block-end: 78px; }  /* mobil barın üstünde */
   body { padding-bottom: 64px; }
-  .header__cta { display: none; }       /* mobilde alt bar + WA ikonu yeterli */
 }
 @media (max-width: 520px) {
   .hero__cta { gap: 0.7rem; }
@@ -432,10 +434,10 @@ a  { color: var(--green); text-decoration: none; }
    ========================================================= */
 .hero__reassure {
   display: flex; flex-wrap: wrap; gap: 0.35rem 1.1rem;
-  font-size: 0.88rem; color: var(--ink-soft); margin: 0 0 1.6rem;
+  font-size: 0.88rem; color: rgba(255,255,255,0.88); margin: 0;
 }
 .hero__reassure span { display: inline-flex; align-items: center; gap: 0.4em; }
-.hero__reassure span::before { content: "✓"; color: var(--green); font-weight: 700; }
+.hero__reassure span::before { content: "✓"; color: #F0C36B; font-weight: 700; }
 
 .form__trust {
   display: flex; flex-wrap: wrap; gap: 0.35rem 1rem;
