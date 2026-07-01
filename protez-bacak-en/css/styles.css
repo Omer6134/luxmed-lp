@@ -402,12 +402,27 @@ a  { color: var(--green); text-decoration: none; }
 }
 .spot ul li strong { color: var(--ink); font-weight: 700; }
 
-/* Uzman kadro görseli — yuvarlak köşe + bej zeminden ayrışan gölge */
-.team__img {
-  border-radius: 24px; border: 1px solid rgba(224,213,190,0.7);
-  box-shadow: 0 30px 60px rgba(15,61,59,0.20); background: var(--white);
-  aspect-ratio: 1068 / 680; object-fit: cover;
+/* Uzman kadro — asimetrik büyük görsel + mikro sayaçlar */
+.team-grid { display: grid; grid-template-columns: 1fr; gap: clamp(2rem, 5vw, 3.5rem); align-items: center; }
+.team-copy .lead { max-width: 40ch; }
+.team-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1.4rem; max-width: 380px; margin-top: 2rem; padding-top: 1.6rem; border-top: 1px solid var(--line); }
+.tstat__n { display: block; font-family: var(--serif); font-weight: 500; font-size: clamp(2rem, 4vw, 2.9rem); color: var(--green); line-height: 1; letter-spacing: -0.01em; }
+.tstat__l { display: block; font-size: 0.85rem; color: var(--ink-soft); margin-top: 0.45rem; }
+
+.team-photo {
+  border-radius: 24px; overflow: hidden;
+  border: 1px solid rgba(224,213,190,0.7); box-shadow: 0 34px 70px rgba(15,61,59,0.22);
+  background: var(--white);
 }
+.team-photo .team__img {
+  display: block; width: 100%; aspect-ratio: 1068 / 680; object-fit: cover;
+  transition: transform .6s cubic-bezier(.2,.7,.2,1);
+}
+.team-photo:hover .team__img { transform: scale(1.04); }
+@media (prefers-reduced-motion: reduce) { .team-photo:hover .team__img { transform: none; } }
+
+/* footer'daki ekip fotoğrafı (ayrı kullanım) korunur */
+.footer__photo { border-radius: 14px; }
 
 /* Why us */
 .why { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
@@ -546,6 +561,7 @@ a  { color: var(--green); text-decoration: none; }
   .spot { grid-template-columns: 1fr 1fr; }
   .spot--rev .spot__media { order: 2; }
   .journey__grid { grid-template-columns: 0.85fr 1.15fr; align-items: center; }
+  .team-grid { grid-template-columns: 2fr 3fr; }
   .showcase { grid-template-columns: 1.1fr 0.9fr; }
   /* Masaüstü: katmanlı/overlap kolaj */
   .showcase__collage { display: block; position: relative; min-height: 520px; }
