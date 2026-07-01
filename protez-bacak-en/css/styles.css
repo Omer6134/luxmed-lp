@@ -85,6 +85,16 @@ a  { color: var(--green); text-decoration: none; }
   margin: 0 0 1.2rem;
 }
 .section--ink .eyebrow { color: #E6BE74; }
+/* --- Koyu yeşil bölümlerde okunurluk (silikon / biyonik / yorumlar) --- */
+.section--ink h2, .section--ink h3 { color: #FFFFFF; }
+.section--ink .btn--primary { background: var(--clay); color: #1a1208; }
+.section--ink .btn--primary:hover { background: #F0B552; }
+.section--ink .spot ul li { color: rgba(243,235,217,0.82); }
+.section--ink .spot ul li strong { color: #FFFFFF; }
+.section--ink .spot ul li::before { background: rgba(224,162,60,0.20); color: #E6BE74; }
+.section--ink .g-reviewsnote { color: rgba(243,235,217,0.72); }
+/* beyaz yorum kartları yeşil zeminde koyu metin korunur */
+.section--ink .rcard h2, .section--ink .rcard h3 { color: var(--ink); }
 .lead { font-size: clamp(1.05rem, 1.5vw, 1.25rem); color: var(--ink-soft); max-width: 56ch; }
 
 /* ---- Butonlar ---- */
@@ -535,7 +545,8 @@ a  { color: var(--green); text-decoration: none; }
 .g-stars { color: #e0a82e; letter-spacing: 2px; font-size: 1.1rem; }
 .g-reviewsnote { font-size: 0.85rem; color: var(--ink-soft); }
 .reviews-grid { display: grid; grid-template-columns: 1fr; gap: 1.2rem; }
-.rcard { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius-lg); padding: 1.5rem 1.6rem; display: flex; flex-direction: column; }
+.rcard { background: var(--white); color: var(--ink); border: 1px solid var(--line); border-radius: var(--radius-lg); padding: 1.5rem 1.6rem; display: flex; flex-direction: column; }
+.rcard p { color: var(--ink); }
 .rcard__top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.8rem; }
 .rcard .stars { color: #e0a82e; letter-spacing: 2px; font-size: 1rem; }
 .rcard .g-mark { font-family: var(--sans); font-weight: 700; color: #4285F4; font-size: 1.1rem; }
