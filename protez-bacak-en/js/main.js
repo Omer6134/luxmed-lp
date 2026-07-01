@@ -65,6 +65,23 @@
     lazyVideos.forEach(function (v) { v.src = v.getAttribute('data-lazyvideo'); });
   }
 
+  /* ---- 4b) Silikon videosu: tıklayınca sesli oynat ---- */
+  var siliconeEmbed = document.getElementById('siliconeEmbed');
+  var siliconeVideo = document.getElementById('siliconeVideo');
+  if (siliconeEmbed && siliconeVideo) {
+    var playBtn = siliconeEmbed.querySelector('.video-embed__play');
+    function playSilicone() {
+      if (!siliconeVideo.src) siliconeVideo.src = siliconeVideo.getAttribute('data-src');
+      siliconeVideo.muted = false;
+      siliconeVideo.controls = true;
+      var p = siliconeVideo.play();
+      if (p && p.catch) p.catch(function () {});
+      siliconeEmbed.classList.add('is-playing');
+      track('silicone_video_play');
+    }
+    if (playBtn) playBtn.addEventListener('click', playSilicone);
+  }
+
   /* ---- 5) Dönüşüm izleme iskeleti ---- */
   function track(eventName) {
     if (typeof window.gtag === 'function') window.gtag('event', eventName, { event_category: 'lead' });
