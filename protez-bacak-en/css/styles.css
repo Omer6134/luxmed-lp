@@ -433,6 +433,10 @@ a  { color: var(--green); text-decoration: none; }
 
 /* ---- Sosyal kanıt: Reels/TikTok tarzı dikey video hub (teal zemin) ---- */
 .section--ink .section__head .lead { color: rgba(243,235,217,0.82); }
+/* Instagram bölümü başlıkları — altın etiket + saf beyaz başlık + krem alt metin */
+#patients .eyebrow { color: #C5A880; }
+#patients .section__head h2 { color: #FFFFFF; }
+#patients .section__head .lead { color: #EAE6DF; }
 
 .reels { display: grid; grid-template-columns: repeat(2, 1fr); gap: clamp(0.7rem, 2vw, 1.2rem); }
 .reel {
