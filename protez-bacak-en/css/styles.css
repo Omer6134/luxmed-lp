@@ -292,6 +292,8 @@ a  { color: var(--green); text-decoration: none; }
 @media (max-width: 919px) {
   .wa-float { display: none; }           /* mobilde alt bar zaten WhatsApp içeriyor */
   body { padding-bottom: 64px; }
+  .header__cta { display: none; }        /* mobilde alt bardaki CTA yeterli — header'a sığmıyor */
+  .btn { white-space: normal; }          /* uzun butonlar taşmasın, satır kaysın */
 }
 @media (max-width: 520px) {
   .hero__cta { gap: 0.7rem; }
