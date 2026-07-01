@@ -387,6 +387,8 @@ a  { color: var(--green); text-decoration: none; }
 .spot + .spot { margin-top: clamp(3rem, 6vw, 5rem); }
 .spot__media img, .spot__media video { width: 100%; border-radius: var(--radius-lg); border: 1px solid var(--line); background: var(--paper-2); }
 .spot__media--pad { padding: clamp(1rem,3vw,2.4rem); background: var(--white); }
+/* spot içindeki bare dikey video (biyonik) — çerçeveli, sesli değil */
+.spot__media > video { aspect-ratio: 4 / 5; object-fit: cover; max-width: 440px; margin-inline: auto; display: block; background: #06110f; box-shadow: 0 24px 55px rgba(15,61,59,0.16); }
 .spot ul { list-style: none; padding: 0; margin: 1.2rem 0 1.6rem; display: grid; gap: 0.6rem; }
 .spot ul li { display: grid; grid-template-columns: auto 1fr; gap: 0.6rem; color: var(--ink-soft); }
 .spot ul li::before { content: "✓"; color: var(--green); font-weight: 700; }
