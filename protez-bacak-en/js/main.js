@@ -36,6 +36,27 @@
   window.addEventListener('scroll', onScroll, { passive: true });
   window.addEventListener('resize', onScroll, { passive: true });
 
+  /* ---- 2b) Mobil hamburger menü ---- */
+  var navToggle = document.getElementById('navToggle');
+  var mobileMenu = document.getElementById('mobileMenu');
+  if (navToggle && header) {
+    function closeNav() {
+      header.classList.remove('is-nav-open');
+      navToggle.setAttribute('aria-expanded', 'false');
+      navToggle.setAttribute('aria-label', 'Menüyü aç');
+    }
+    navToggle.addEventListener('click', function () {
+      var open = header.classList.toggle('is-nav-open');
+      navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      navToggle.setAttribute('aria-label', open ? 'Menüyü kapat' : 'Menüyü aç');
+    });
+    if (mobileMenu) {
+      mobileMenu.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', closeNav); });
+    }
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeNav(); });
+    window.addEventListener('resize', function () { if (window.innerWidth >= 920) closeNav(); });
+  }
+
   /* ---- 3) Scroll-reveal ---- */
   var reveals = document.querySelectorAll('[data-reveal]');
   if ('IntersectionObserver' in window && reveals.length) {

@@ -148,6 +148,42 @@ a  { color: var(--green); text-decoration: none; }
 }
 .icon-btn svg { width: 20px; height: 20px; }
 
+/* ---- Hamburger (mobil) ---- */
+.hamburger {
+  display: inline-flex; flex-direction: column; justify-content: center; gap: 5px;
+  width: 44px; height: 44px; padding: 11px; border: 0; background: transparent;
+  color: inherit; cursor: pointer; -webkit-tap-highlight-color: transparent;
+}
+.hamburger span { display: block; height: 2px; width: 100%; background: currentColor; border-radius: 2px; transition: transform .3s ease, opacity .2s ease; }
+.header.is-nav-open .hamburger span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.header.is-nav-open .hamburger span:nth-child(2) { opacity: 0; }
+.header.is-nav-open .hamburger span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* menü açıkken header'ı katı krem yap (okunur) */
+.header.is-nav-open {
+  background: rgba(243,235,217,0.98); backdrop-filter: saturate(140%) blur(10px);
+  border-bottom-color: var(--line); color: var(--ink);
+}
+.header.is-nav-open .brand img { filter: none; }
+
+/* ---- Açılır mobil menü ---- */
+.mobile-nav {
+  position: absolute; top: 100%; inset-inline: 0;
+  background: rgba(243,235,217,0.98); backdrop-filter: saturate(140%) blur(10px);
+  border-bottom: 1px solid var(--line);
+  display: flex; flex-direction: column; padding: 0.4rem 0 1.2rem;
+  transform: translateY(-12px); opacity: 0; visibility: hidden; pointer-events: none;
+  transition: opacity .25s ease, transform .25s ease, visibility .25s;
+  box-shadow: 0 26px 44px rgba(15,61,59,0.16);
+}
+.header.is-nav-open .mobile-nav { opacity: 1; transform: none; visibility: visible; pointer-events: auto; }
+.mobile-nav a:not(.btn) {
+  color: var(--ink); font-weight: 600; font-size: 1.05rem;
+  padding: 0.95rem clamp(1.1rem, 5vw, 1.6rem); border-bottom: 1px solid rgba(20,33,31,0.07);
+}
+.mobile-nav a:not(.btn):hover { color: var(--clay-700); }
+.mobile-nav__cta { margin: 1rem clamp(1.1rem, 5vw, 1.6rem) 0; justify-content: center; color: #1a1208; }
+
 /* ---- Hero — tam ekran video + filtre ---- */
 .hero {
   position: relative; min-height: 100svh; display: flex; align-items: flex-end;
@@ -352,6 +388,8 @@ a  { color: var(--green); text-decoration: none; }
 }
 @media (min-width: 920px) {
   .header__nav { display: flex; }       /* PC menü linkleri */
+  .hamburger { display: none; }         /* PC'de hamburger gizli */
+  .mobile-nav { display: none; }        /* PC'de açılır menü gizli */
   .feature__grid { grid-template-columns: 0.95fr 1.05fr; }
   .wa-float { width: 60px; height: 60px; }
   .mbar { display: none; }          /* masaüstünde gizli */
