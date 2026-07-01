@@ -458,9 +458,15 @@ a  { color: var(--green); text-decoration: none; }
 .rcard__top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.8rem; }
 .rcard .stars { color: #e0a82e; letter-spacing: 2px; font-size: 1rem; }
 .rcard .g-mark { font-family: var(--sans); font-weight: 700; color: #4285F4; font-size: 1.1rem; }
-.rcard p { font-size: 1rem; line-height: 1.6; margin: 0 0 1.1rem; }
+.rcard p { font-size: 1rem; line-height: 1.6; margin: 0 0 1.3rem; }
 .rcard footer { margin-top: auto; }
-.rcard__name { font-size: 0.85rem; font-weight: 600; color: var(--ink-soft); }
+/* yazar bloğu: dairesel avatar + isim + bayrak + protez tipi */
+.rcard__author { display: flex; align-items: center; gap: 0.75rem; padding-top: 1.1rem; border-top: 1px solid var(--line); }
+.rcard__avatar { width: 46px; height: 46px; border-radius: 50%; object-fit: cover; flex: none; border: 2px solid var(--white); box-shadow: 0 3px 10px rgba(15,61,59,0.16); }
+.rcard__who { display: flex; flex-direction: column; min-width: 0; }
+.rcard__name { display: inline-flex; align-items: center; gap: 0.45em; font-size: 0.95rem; font-weight: 700; color: var(--ink); }
+.rcard__name .flag { width: 20px; height: 14px; border-radius: 2px; object-fit: cover; box-shadow: 0 0 0 1px rgba(0,0,0,0.06); flex: none; }
+.rcard__meta { font-size: 0.8rem; color: var(--ink-soft); margin-top: 0.15rem; }
 .reviews-cta { text-align: center; margin-top: clamp(1.8rem,4vw,2.6rem); }
 
 /* Lead form */
