@@ -450,6 +450,7 @@ a  { color: var(--green); text-decoration: none; }
 .bento__card--feature h3 { color: #fff; font-size: clamp(1.4rem, 2.2vw, 2rem); position: relative; margin-bottom: 0.8rem; }
 .bento__card--feature p { color: rgba(243,235,217,0.86); font-size: 1.02rem; position: relative; max-width: 54ch; }
 .bento__ic--light { background: rgba(243,235,217,0.14); color: #F0C36B; }
+.bento__tall { justify-content: center; }
 
 /* ---- Sosyal kanıt: Reels/TikTok tarzı dikey video hub (teal zemin) ---- */
 .section--ink .section__head .lead { color: rgba(243,235,217,0.82); }
@@ -581,13 +582,11 @@ a  { color: var(--green); text-decoration: none; }
 }
 @media (min-width: 760px) {
   .reels { grid-template-columns: repeat(4, 1fr); }
-  /* Bento asimetrik puzzle: büyük garanti kartı 2x2 */
-  .bento { grid-template-columns: repeat(3, 1fr); grid-auto-rows: 1fr; }
-  .bento__lg   { grid-column: 1 / 3; grid-row: 1 / 3; }
-  .bento__ott  { grid-column: 3; grid-row: 1; }
-  .bento__tech { grid-column: 3; grid-row: 2; }
-  .bento__log  { grid-column: 1; grid-row: 3; }
-  .bento__lang { grid-column: 2 / 4; grid-row: 3; }
+  /* Bento asimetrik puzzle: sol 2 geniş kart (garanti + hizmet) + sağ dikey teknoloji */
+  .bento { grid-template-columns: repeat(3, 1fr); }
+  .bento__lg   { grid-column: 1 / 3; grid-row: 1; }
+  .bento__tall { grid-column: 3; grid-row: 1 / 3; }
+  .bento__wide { grid-column: 1 / 3; grid-row: 2; }
 }
 @media (min-width: 920px) {
   .products { grid-template-columns: repeat(4, 1fr); }
