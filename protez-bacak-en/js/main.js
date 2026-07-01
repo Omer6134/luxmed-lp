@@ -117,9 +117,9 @@
       }).then(function (r) { return r.json(); })
         .then(function (res) {
           if (res.success) showSuccess();
-          else { alert('Bir sorun oluştu. Lütfen WhatsApp’tan yazın.'); btn.disabled = false; btn.textContent = 'Ücretsiz teklifimi gönder'; }
+          else { alert('Bir sorun oluştu. Lütfen WhatsApp’tan yazın.'); btn.disabled = false; btn.textContent = 'Gönder'; }
         })
-        .catch(function () { alert('Bağlantı hatası. Lütfen WhatsApp’tan yazın.'); btn.disabled = false; btn.textContent = 'Ücretsiz teklifimi gönder'; });
+        .catch(function () { alert('Bağlantı hatası. Lütfen WhatsApp’tan yazın.'); btn.disabled = false; btn.textContent = 'Gönder'; });
     });
   }
 
