@@ -389,9 +389,18 @@ a  { color: var(--green); text-decoration: none; }
 .spot__media--pad { padding: clamp(1rem,3vw,2.4rem); background: var(--white); }
 /* spot içindeki bare dikey video (biyonik) — çerçeveli, sesli değil */
 .spot__media > video { aspect-ratio: 4 / 5; object-fit: cover; max-width: 440px; margin-inline: auto; display: block; background: #06110f; box-shadow: 0 24px 55px rgba(15,61,59,0.16); }
-.spot ul { list-style: none; padding: 0; margin: 1.2rem 0 1.6rem; display: grid; gap: 0.6rem; }
-.spot ul li { display: grid; grid-template-columns: auto 1fr; gap: 0.6rem; color: var(--ink-soft); }
-.spot ul li::before { content: "✓"; color: var(--green); font-weight: 700; }
+.spot ul { list-style: none; padding: 0; margin: 1.4rem 0 1.8rem; display: grid; gap: 1rem; }
+.spot ul li {
+  position: relative; padding-inline-start: 2.6rem; color: var(--ink-soft);
+  line-height: 1.55;
+}
+.spot ul li::before {
+  content: "✓"; position: absolute; inset-inline-start: 0; top: 0.1em;
+  width: 1.7em; height: 1.7em; display: grid; place-items: center;
+  background: rgba(15,61,59,0.10); color: var(--green);
+  border-radius: 50%; font-size: 0.82em; font-weight: 700;
+}
+.spot ul li strong { color: var(--ink); font-weight: 700; }
 
 /* Why us */
 .why { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
