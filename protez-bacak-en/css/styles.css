@@ -483,11 +483,19 @@ a  { color: var(--green); text-decoration: none; }
 .is-sent .form__fields { display: none; }
 .is-sent .form__ok { display: block; }
 .quote__aside h2 { margin-bottom: 0.6rem; }
-.quote__aside .lead { margin-bottom: 1.4rem; }
-.quote__alt { display: flex; flex-wrap: wrap; gap: 0.8rem; margin-bottom: 1.6rem; }
-.quote__contact { display: grid; gap: 0.7rem; font-size: 0.96rem; }
-.quote__contact a { color: var(--ink); }
-.quote__contact .lab { color: var(--ink-soft); font-size: 0.8rem; display: block; }
+.quote__aside .lead { margin-bottom: 0.4rem; }
+
+/* Formu neden doldurmalıyım — ikonlu 4 neden */
+.reasons { list-style: none; padding: 0; margin: 1.8rem 0 0; display: grid; gap: 1.6rem; }
+.reasons li { display: grid; grid-template-columns: auto 1fr; gap: 1.1rem; align-items: start; }
+.reason-ic {
+  width: 48px; height: 48px; flex: none; border-radius: 14px;
+  display: grid; place-items: center;
+  background: rgba(224,162,60,0.16); color: var(--clay-700);
+}
+.reason-ic svg { width: 23px; height: 23px; }
+.reasons h4 { font-family: var(--sans); font-size: 1.06rem; font-weight: 700; color: var(--ink); margin: 0.15rem 0 0.3rem; }
+.reasons p { margin: 0; color: var(--ink-soft); font-size: 0.96rem; line-height: 1.55; }
 
 /* Harita / konum */
 .location { display: grid; grid-template-columns: 1fr; gap: clamp(1.5rem,4vw,2.5rem); align-items: center; }

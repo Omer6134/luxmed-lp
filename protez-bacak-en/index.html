@@ -21,7 +21,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" />
 
-  <link rel="stylesheet" href="css/styles.css?v=2" />
+  <link rel="stylesheet" href="css/styles.css?v=3" />
   <script>document.documentElement.className += ' js';</script>
 
   <!-- =========================================================
@@ -426,13 +426,8 @@
         <div class="quote">
           <div class="form" id="leadForm">
             <div class="form__fields">
-              <h2 style="margin-bottom:.3rem">Ücretsiz fiyat teklifi alın</h2>
-              <p class="lead" style="margin-bottom:1rem">İhtiyacınızı kısaca anlatın. Ekibimiz saatler içinde döner — hiçbir yükümlülük yok.</p>
-              <div class="form__trust">
-                <span>Gizli tutulur</span>
-                <span>~2 saat içinde dönüş</span>
-                <span>Yükümlülük yok</span>
-              </div>
+              <h2 style="margin-bottom:.3rem">Ücretsiz Konsültasyon Formu</h2>
+              <p class="lead" style="margin-bottom:1.6rem">Lütfen bilgilerinizi eksiksiz doldurun.</p>
               <form id="quoteForm" novalidate>
                 <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY" />
                 <input type="hidden" name="subject" value="Yeni Protez Bacak teklifi — luxmedprotez.com/lp/prosthetic-leg" />
@@ -460,8 +455,8 @@
                   <div class="field"><label for="f-msg">Mesaj (opsiyonel)</label><textarea id="f-msg" name="message" placeholder="Ülke, ampütasyon seviyesi, zaman planı…"></textarea></div>
                 </div>
                 <label class="consent"><input type="checkbox" required /> Talebimle ilgili benimle iletişime geçilmesini onaylıyorum.</label>
-                <button class="btn btn--primary btn--lg btn--block" type="submit" data-track="lead_form_submit">Ücretsiz teklifimi gönder</button>
-                <p class="form__note">🔒 Bilgileriniz gizli kalır. Genellikle birkaç saat içinde döneriz.</p>
+                <button class="btn btn--primary btn--lg btn--block" type="submit" data-track="lead_form_submit">Uzman İncelemesini Başlat</button>
+                <p class="form__note">🔒 Sağlık verileriniz KVKK/GDPR kapsamında %100 gizli tutulur.</p>
               </form>
             </div>
             <div class="form__ok">
@@ -471,19 +466,39 @@
             </div>
           </div>
 
-          <aside class="quote__aside">
-            <h2>Hemen konuşmak ister misiniz?</h2>
-            <p class="lead">Bize doğrudan ulaşın — kendi dilinizde yanıtlıyoruz.</p>
-            <div class="quote__alt">
-              <a class="btn btn--whatsapp btn--lg" href="https://wa.me/905373498403?text=Merhaba%2C%20protez%20bacak%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener" data-track="lead_whatsapp">WhatsApp'tan Yazın</a>
-              <a class="btn btn--ghost btn--lg" href="tel:+905373498403" data-track="lead_call">Hemen Arayın</a>
-            </div>
-            <div class="quote__contact">
-              <div><span class="lab">WhatsApp / Cep</span><a href="tel:+905373498403">+90 537 349 84 03</a></div>
-              <div><span class="lab">Klinik telefonu</span><a href="tel:+902125558822">+90 212 555 88 22</a></div>
-              <div><span class="lab">E-posta</span><a href="mailto:info@luxmedprotez.com">info@luxmedprotez.com</a></div>
-              <div><span class="lab">Adres</span>Topkapı, Turgut Özal Millet Cd. No:160/A, 34093 Fatih/İstanbul</div>
-            </div>
+          <aside class="quote__aside" data-reveal>
+            <h2>Hemen Konuşmak İster misiniz?</h2>
+            <p class="lead">Formu doldurduğunuzda sizi nelerin beklediğini ve sunduğumuz ayrıcalıkları inceleyin:</p>
+            <ul class="reasons">
+              <li>
+                <span class="reason-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a15 15 0 010 18M12 3a15 15 0 000 18"/></svg></span>
+                <div>
+                  <h4>Kendi Dilinizde Kesintisiz Destek</h4>
+                  <p>Sizinle iletişime geçecek tüm ekibimiz İngilizce, Rusça, Arapça ve Fransızca dillerine tam hakimdir; dil bariyeri yaşamazsınız.</p>
+                </div>
+              </li>
+              <li>
+                <span class="reason-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+                <div>
+                  <h4>Aynı Gün Dönüş</h4>
+                  <p>Uzman hasta danışmanlarımız, çalışma saatleri içerisinde formunuza en geç 2 saat içinde kapsamlı bir geri dönüş sağlar.</p>
+                </div>
+              </li>
+              <li>
+                <span class="reason-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M9 3h6a1 1 0 011 1v1h1a2 2 0 012 2v12a2 2 0 01-2 2H7a2 2 0 01-2-2V7a2 2 0 012-2h1V4a1 1 0 011-1z"/><path d="M9 13l2 2 4-4"/></svg></span>
+                <div>
+                  <h4>Ücretsiz Ön Değerlendirme</h4>
+                  <p>Paylaşacağınız bilgiler ve (varsa) medikal geçmişiniz, kliniğimizdeki uzman protez teknisyenleri tarafından ücretsiz olarak ön incelemeye alınır.</p>
+                </div>
+              </li>
+              <li>
+                <span class="reason-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 7.6-7 9-4-1.4-7-4.5-7-9V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg></span>
+                <div>
+                  <h4>Hiçbir Yükümlülük Yok</h4>
+                  <p>Bu form tamamen bilgilendirme amaçlıdır. Size özel hazırlayacağımız tedavi ve ekspres lojistik planını incelemek için hiçbir taahhütte bulunmazsınız.</p>
+                </div>
+              </li>
+            </ul>
           </aside>
         </div>
       </div>
@@ -547,6 +562,6 @@
     </a>
   </nav>
 
-  <script src="js/main.js?v=2"></script>
+  <script src="js/main.js?v=3"></script>
 </body>
 </html>
