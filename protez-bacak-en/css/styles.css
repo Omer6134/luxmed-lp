@@ -409,6 +409,42 @@ a  { color: var(--green); text-decoration: none; }
   aspect-ratio: 1068 / 680; object-fit: cover;
 }
 
+/* ---- İletişim & konum ---- */
+.contact-grid { display: grid; grid-template-columns: 1fr; gap: clamp(2rem,5vw,3.5rem); align-items: center; }
+.contact-badges { display: flex; flex-wrap: wrap; gap: 0.6rem; margin: 1.2rem 0 1.8rem; }
+.cbadge {
+  display: inline-flex; align-items: center; gap: 0.45em;
+  font-size: 0.82rem; font-weight: 600; color: var(--ink);
+  background: var(--white); border: 1px solid var(--line);
+  padding: 0.5em 0.9em; border-radius: 999px;
+}
+.cbadge strong { color: var(--green); font-weight: 800; }
+.cbadge--gold { background: var(--clay); border-color: transparent; color: #1a1208; }
+.dot-live { width: 8px; height: 8px; border-radius: 50%; background: #1a7f3c; box-shadow: 0 0 0 3px rgba(26,127,60,0.25); animation: pulse-live 1.6s ease-in-out infinite; }
+@keyframes pulse-live { 0%,100% { opacity: 1; } 50% { opacity: 0.45; } }
+
+.contact-list { list-style: none; padding: 0; margin: 0 0 1.8rem; display: grid; gap: 1.1rem; }
+.contact-list li { display: grid; grid-template-columns: auto 1fr; gap: 0.9rem; align-items: start; }
+.ci-ic {
+  width: 42px; height: 42px; flex: none; border-radius: 12px;
+  display: grid; place-items: center;
+  background: rgba(15,61,59,0.08); color: var(--green);
+}
+.ci-ic svg { width: 20px; height: 20px; }
+.ci-ic--wa { background: rgba(43,183,65,0.12); color: #1a9c34; }
+.ci-lab { display: block; font-size: 0.75rem; letter-spacing: 0.04em; text-transform: uppercase; color: var(--ink-soft); margin-bottom: 0.15rem; }
+.contact-list a { color: var(--ink); font-weight: 600; }
+.contact-list a:hover { color: var(--green); }
+.ci-val { color: var(--ink); font-weight: 500; }
+.contact-cta { display: flex; flex-wrap: wrap; gap: 0.8rem; }
+
+.contact-media { position: relative; }
+.contact-media__cap {
+  position: absolute; inset-block-end: 12px; inset-inline-start: 12px;
+  background: rgba(8,30,29,0.78); color: #fff; backdrop-filter: blur(4px);
+  font-size: 0.78rem; font-weight: 500; padding: 0.45em 0.85em; border-radius: 999px;
+}
+
 /* Why us */
 .why { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
 .why__item { padding: 1.6rem; background: var(--white); border: 1px solid var(--line); border-radius: var(--radius-lg); }
@@ -524,7 +560,7 @@ a  { color: var(--green); text-decoration: none; }
   .showcase__collage .cl--2 { width: 50%; right: 2%; bottom: 0; transform: rotate(3deg); z-index: 2; }
   .cl-badge { position: absolute; top: 6%; right: 0; z-index: 3; box-shadow: 0 12px 28px rgba(0,0,0,0.28); }
   .quote { grid-template-columns: 1.1fr 0.9fr; }
-  .location { grid-template-columns: 1fr 1fr; }
+  .contact-grid { grid-template-columns: 1.05fr 0.95fr; }
   .footer__grid { grid-template-columns: 2fr 1fr 1fr; }
   .form .row.row-2 { grid-template-columns: 1fr 1fr; }
 }
