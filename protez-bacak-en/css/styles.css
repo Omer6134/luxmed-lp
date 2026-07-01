@@ -194,6 +194,10 @@ a  { color: var(--green); text-decoration: none; }
 .hero__inner > *:nth-child(6) { animation-delay: .78s; }
 @keyframes heroIn { to { opacity: 1; transform: none; } }
 
+/* hero'da ikincil (WhatsApp) buton — beyaz çerçeve, hafif ağırlık */
+.hero .btn--ghost { color: #fff; border-color: rgba(255,255,255,0.55); background: rgba(255,255,255,0.04); }
+.hero .btn--ghost:hover { border-color: #fff; background: rgba(255,255,255,0.12); }
+
 /* ---- Trust strip ---- */
 .trustbar { border-block: 1px solid var(--line); background: var(--white); }
 .trustbar__inner {
@@ -268,7 +272,7 @@ a  { color: var(--green); text-decoration: none; }
   .mbar { display: none; }          /* masaüstünde gizli */
 }
 @media (max-width: 919px) {
-  .wa-float { inset-block-end: 78px; }  /* mobil barın üstünde */
+  .wa-float { display: none; }           /* mobilde alt bar zaten WhatsApp içeriyor */
   body { padding-bottom: 64px; }
 }
 @media (max-width: 520px) {
