@@ -505,6 +505,22 @@ a  { color: var(--green); text-decoration: none; }
 .footer__brand .brand__name { color: var(--paper); }
 .footer__bottom { border-top: 1px solid rgba(243,235,217,0.15); margin-top: 2rem; padding-top: 1.4rem; font-size: 0.82rem; display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; justify-content: space-between; }
 
+/* Footer — ekip fotoğrafı, iletişim listesi, sosyal ikonlar */
+.footer__photo { margin-top: 1.3rem; max-width: 300px; width: 100%; border-radius: 14px; border: 1px solid rgba(243,235,217,0.14); box-shadow: 0 16px 34px rgba(0,0,0,0.28); }
+.fcontact { list-style: none; padding: 0; margin: 0 0 1.4rem; display: grid; gap: 0.9rem; }
+.fcontact .fc-lab { display: block; font-size: 0.7rem; letter-spacing: 0.05em; text-transform: uppercase; color: rgba(243,235,217,0.5); margin-bottom: 0.12rem; }
+.fcontact a { color: var(--paper); font-weight: 600; }
+.fcontact a:hover { color: var(--clay); }
+.fcontact li > span:last-child:not(.fc-lab) { color: rgba(243,235,217,0.82); }
+.social { display: flex; gap: 0.55rem; }
+.social a {
+  width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center;
+  background: rgba(243,235,217,0.10); color: var(--paper);
+  transition: background .2s ease, color .2s ease, transform .12s ease;
+}
+.social a:hover { background: var(--clay); color: #1a1208; transform: translateY(-2px); }
+.social svg { width: 18px; height: 18px; }
+
 @media (min-width: 680px) {
   .products { grid-template-columns: repeat(2, 1fr); }
   .why { grid-template-columns: repeat(2, 1fr); }
@@ -525,7 +541,7 @@ a  { color: var(--green); text-decoration: none; }
   .cl-badge { position: absolute; top: 6%; right: 0; z-index: 3; box-shadow: 0 12px 28px rgba(0,0,0,0.28); }
   .quote { grid-template-columns: 1.1fr 0.9fr; }
   .location { grid-template-columns: 1fr 1fr; }
-  .footer__grid { grid-template-columns: 2fr 1fr 1fr; }
+  .footer__grid { grid-template-columns: 1.5fr 0.8fr 1.3fr; }
   .form .row.row-2 { grid-template-columns: 1fr 1fr; }
 }
 
