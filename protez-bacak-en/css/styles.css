@@ -198,6 +198,24 @@ a  { color: var(--green); text-decoration: none; }
 .hero .btn--ghost { color: #fff; border-color: rgba(255,255,255,0.55); background: rgba(255,255,255,0.04); }
 .hero .btn--ghost:hover { border-color: #fff; background: rgba(255,255,255,0.12); }
 
+/* hero içi güven göstergeleri — kompakt, dikkat çeken ama az yer */
+.hero__stats {
+  list-style: none; padding: clamp(1.2rem,3vw,1.6rem) 0 0; margin: clamp(1.6rem,4vw,2.4rem) 0 0;
+  display: grid; grid-template-columns: repeat(4, max-content);
+  gap: clamp(1.2rem,4vw,2.8rem);
+  border-top: 1px solid rgba(255,255,255,0.18);
+}
+.hstat__n { display: block; font-family: var(--serif); font-weight: 500; font-size: clamp(1.5rem,2.6vw,2.15rem); color: #F2C871; line-height: 1; letter-spacing: -0.01em; }
+.hstat__s { font-size: 0.68em; margin-inline-start: 0.05em; }
+.hstat__l { display: block; font-size: 0.78rem; color: rgba(255,255,255,0.82); margin-top: 0.35rem; white-space: nowrap; }
+@media (max-width: 560px) {
+  .hero__stats { grid-template-columns: repeat(2, max-content); gap: 0.9rem 2rem; margin-top: 1.4rem; padding-top: 1.1rem; }
+  .hstat__n { font-size: 1.45rem; }
+  .hstat__l { font-size: 0.72rem; }
+  .hero__inner { padding-block-end: 5.5rem; }  /* mobil alt CTA barını geçsin */
+}
+@media (max-width: 919px) { .hero__scroll { display: none; } }
+
 /* ---- Trust strip ---- */
 .trustbar { border-block: 1px solid var(--line); background: var(--white); }
 .trustbar__inner {
