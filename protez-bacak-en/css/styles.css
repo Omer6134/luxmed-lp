@@ -458,6 +458,7 @@ a  { color: var(--green); text-decoration: none; }
 #patients .eyebrow { color: #C5A880; }
 #patients .section__head h2 { color: #FFFFFF; }
 #patients .section__head .lead { color: #EAE6DF; }
+@media (min-width: 920px) { #patients .section__head h2 { white-space: nowrap; } }
 
 .reels { display: grid; grid-template-columns: repeat(2, 1fr); gap: clamp(0.7rem, 2vw, 1.2rem); }
 .reel {
