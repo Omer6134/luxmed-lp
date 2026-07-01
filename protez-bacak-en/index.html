@@ -21,7 +21,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" />
 
-  <link rel="stylesheet" href="css/styles.css?v=7" />
+  <link rel="stylesheet" href="css/styles.css?v=8" />
   <script>document.documentElement.className += ' js';</script>
 
   <!-- =========================================================
@@ -325,25 +325,38 @@
           <p class="lead">İlk uygulamadan İstanbul sokaklarında yürümeye — hastalarımızın yolculuğunu izleyin.</p>
         </div>
 
-        <div class="showcase">
-          <!-- Sol: katmanlı foto kolajı + altın rozet -->
-          <div class="showcase__collage">
-            <figure class="cl cl--1"><img src="assets/img/patient-3.jpg" alt="Protez bacaklarıyla bir arada mutlu Luxmed hastaları" loading="lazy" /></figure>
-            <figure class="cl cl--2"><img src="assets/img/patient-1.jpg" alt="Protez bacağıyla yürüyen Luxmed hastası" loading="lazy" /></figure>
-            <span class="cl-badge"><strong>2000+</strong> mutlu hasta</span>
-          </div>
+        <!-- Reels / TikTok tarzı dikey video hub (ham IG embed değil) -->
+        <!-- NOT: href'ler gerçek Reels linkleriyle güncellenecek -->
+        <div class="reels" data-reveal>
+          <a class="reel" href="https://www.instagram.com/reel/DEelS0Asrmw/" target="_blank" rel="noopener" data-track="cta_instagram" aria-label="Hasta hikayesini Instagram'da izle">
+            <img class="reel__thumb" src="assets/img/reel-1.jpg" alt="Luxmed hastası yeniden yürüyor" loading="lazy" />
+            <span class="reel__ig" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.3 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.3 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.3-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.3-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.4C8.4 2.2 8.8 2.2 12 2.2zm0 3.1A6.7 6.7 0 1018.7 12 6.7 6.7 0 0012 5.3zm0 11A4.3 4.3 0 1116.3 12 4.3 4.3 0 0112 16.3zm6.9-11.3a1.6 1.6 0 11-1.6-1.6 1.6 1.6 0 011.6 1.6z"/></svg></span>
+            <span class="reel__play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+            <span class="reel__cap">Yeniden yürümenin sevinci</span>
+          </a>
+          <a class="reel" href="https://www.instagram.com/luxmedprosthetic/" target="_blank" rel="noopener" data-track="cta_instagram" aria-label="Hasta hikayesini Instagram'da izle">
+            <img class="reel__thumb" src="assets/img/reel-2.jpg" alt="Luxmed hastası İstanbul'da" loading="lazy" />
+            <span class="reel__ig" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.3 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.3 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.3-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.3-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.4C8.4 2.2 8.8 2.2 12 2.2zm0 3.1A6.7 6.7 0 1018.7 12 6.7 6.7 0 0012 5.3zm0 11A4.3 4.3 0 1116.3 12 4.3 4.3 0 0112 16.3zm6.9-11.3a1.6 1.6 0 11-1.6-1.6 1.6 1.6 0 011.6 1.6z"/></svg></span>
+            <span class="reel__play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+            <span class="reel__cap">İstanbul'da yeni başlangıç</span>
+          </a>
+          <a class="reel" href="https://www.instagram.com/luxmedprosthetic/" target="_blank" rel="noopener" data-track="cta_instagram" aria-label="Hasta hikayesini Instagram'da izle">
+            <img class="reel__thumb" src="assets/img/reel-3.jpg" alt="Silikon protez detayı" loading="lazy" />
+            <span class="reel__ig" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.3 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.3 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.3-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.3-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.4C8.4 2.2 8.8 2.2 12 2.2zm0 3.1A6.7 6.7 0 1018.7 12 6.7 6.7 0 0012 5.3zm0 11A4.3 4.3 0 1116.3 12 4.3 4.3 0 0112 16.3zm6.9-11.3a1.6 1.6 0 11-1.6-1.6 1.6 1.6 0 011.6 1.6z"/></svg></span>
+            <span class="reel__play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+            <span class="reel__cap">Silikon protez detayı</span>
+          </a>
+          <a class="reel" href="https://www.instagram.com/luxmedprosthetic/" target="_blank" rel="noopener" data-track="cta_instagram" aria-label="Hasta hikayesini Instagram'da izle">
+            <img class="reel__thumb" src="assets/img/reel-4.jpg" alt="Biyonik bacakla yürüyüş" loading="lazy" />
+            <span class="reel__ig" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.3 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.3 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.3-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.3-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.4C8.4 2.2 8.8 2.2 12 2.2zm0 3.1A6.7 6.7 0 1018.7 12 6.7 6.7 0 0012 5.3zm0 11A4.3 4.3 0 1116.3 12 4.3 4.3 0 0112 16.3zm6.9-11.3a1.6 1.6 0 11-1.6-1.6 1.6 1.6 0 011.6 1.6z"/></svg></span>
+            <span class="reel__play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+            <span class="reel__cap">Biyonik bacakla özgürlük</span>
+          </a>
+        </div>
 
-          <!-- Sağ: çerçeveli Instagram reel + takip -->
-          <aside class="showcase__ig">
-            <div class="ig-frame">
-              <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DEelS0Asrmw/?utm_source=ig_embed" data-instgrm-version="14" style="background:#FFF;border:0;border-radius:14px;margin:0;padding:0;width:100%"></blockquote>
-            </div>
-            <div class="ig-meta">
-              <div class="ig-handle"><span class="ig-dot" aria-hidden="true"></span> @luxmedprosthetic</div>
-              <p>Gerçek uygulamaları, ilk adımları ve hasta hikâyelerini Instagram'da paylaşıyoruz.</p>
-              <a class="btn btn--gold btn--lg" href="https://www.instagram.com/luxmedprosthetic/" target="_blank" rel="noopener" data-track="cta_instagram">Instagram'da Takip Et →</a>
-            </div>
-          </aside>
+        <div class="ig-follow" data-reveal>
+          <span class="ig-handle"><span class="ig-dot" aria-hidden="true"></span> @luxmedprosthetic</span>
+          <a class="btn btn--gold btn--lg" href="https://www.instagram.com/luxmedprosthetic/" target="_blank" rel="noopener" data-track="cta_instagram">Instagram'da Takip Et →</a>
         </div>
       </div>
     </section>
@@ -584,6 +597,6 @@
     </a>
   </nav>
 
-  <script src="js/main.js?v=7"></script>
+  <script src="js/main.js?v=8"></script>
 </body>
 </html>
