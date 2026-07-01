@@ -21,7 +21,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" />
 
-  <link rel="stylesheet" href="css/styles.css?v=13" />
+  <link rel="stylesheet" href="css/styles.css?v=14" />
   <script>document.documentElement.className += ' js';</script>
 
   <!-- =========================================================
@@ -210,51 +210,57 @@
       </div>
     </section>
 
-    <!-- ================= ÜRÜN YELPAZESİ ================= -->
+    <!-- ================= ÜRÜN YELPAZESİ — SEKMELER ================= -->
     <section class="section" id="solutions">
       <div class="container">
-        <div class="section__head" data-reveal>
-          <span class="eyebrow">Tüm çözümler tek çatı altında</span>
-          <h2>Diz altı, diz üstü, silikon ya da biyonik — yaşamınıza göre</h2>
-          <p class="lead">Ampütasyon seviyeniz ne olursa olsun, Ottobock eğitimli ekibimiz protezinizi nasıl yaşamak, hareket etmek ve hissetmek istediğinize göre tasarlar.</p>
+        <div class="section__head section__head--center" data-reveal>
+          <span class="eyebrow eyebrow--gold">Kişiselleştirilmiş çözümler</span>
+          <h2 class="tabs__title">Yaşam Tarzınıza Uygun Teknolojiler</h2>
+          <p class="lead">Ampütasyon seviyenize ve günlük hareket alışkanlıklarınıza göre şekillenen yeni adımlarınızı keşfedin.</p>
         </div>
-        <div class="products">
-          <article class="pcard">
-            <div class="pcard__media pcard__media--contain"><img src="assets/img/below-knee.webp" alt="Diz altı protez bacak" loading="lazy" /></div>
-            <div class="pcard__body">
-              <span class="pcard__tag">Alt ekstremite</span>
-              <h3>Diz Altı</h3>
-              <p>Kendi diziniz korunur, en doğal yürüyüş elde edilir. Vakumlu soketler ve hafif karbon ayaklarla gün boyu konfor.</p>
-              <a class="link" href="#quote" data-track="cta_product">Teklif al</a>
+
+        <div class="tabs" data-reveal>
+          <div class="tabs__nav" role="tablist" aria-label="Protez çözümleri">
+            <button class="tabs__tab is-active" role="tab" aria-selected="true" id="tab-0" aria-controls="panel-0" data-tab="0" type="button">Diz Altı Protezler</button>
+            <button class="tabs__tab" role="tab" aria-selected="false" id="tab-1" aria-controls="panel-1" data-tab="1" type="button">Diz Üstü Protezler</button>
+            <button class="tabs__tab" role="tab" aria-selected="false" id="tab-2" aria-controls="panel-2" data-tab="2" type="button">Silikon &amp; Estetik</button>
+            <button class="tabs__tab" role="tab" aria-selected="false" id="tab-3" aria-controls="panel-3" data-tab="3" type="button">Biyonik / Mikroişlemcili</button>
+          </div>
+
+          <div class="tabs__panels">
+            <div class="tabpanel is-active" role="tabpanel" id="panel-0" aria-labelledby="tab-0" data-panel="0">
+              <div class="tabpanel__media"><img src="assets/img/below-knee.webp" alt="Diz altı protez ile doğal yürüyüş" loading="lazy" /></div>
+              <div class="tabpanel__body">
+                <h3>Doğal Yürüyüş ve Gün Boyu Konfor</h3>
+                <p>Karbon esneklik ve gelişmiş vakum sistemleri, kendi diz yapınızı maksimum verimle korur. Günlük yaşamınızda protezin varlığını unutturan, ağrısız ve tamamen doğal bir yürüyüş dinamiği sunar.</p>
+                <a class="link" href="#quote" data-track="cta_product">Ücretsiz teklif al</a>
+              </div>
             </div>
-          </article>
-          <article class="pcard">
-            <div class="pcard__media pcard__media--contain"><img src="assets/img/above-knee.jpg" alt="Diz üstü protez bacak" loading="lazy" /></div>
-            <div class="pcard__body">
-              <span class="pcard__tag">Alt ekstremite</span>
-              <h3>Diz Üstü</h3>
-              <p>Mekanik ve mikroişlemcili diz seçenekleri — merdiven ve eğimde bile denge ve güven katar.</p>
-              <a class="link" href="#quote" data-track="cta_product">Teklif al</a>
+            <div class="tabpanel" role="tabpanel" id="panel-1" aria-labelledby="tab-1" data-panel="1" hidden>
+              <div class="tabpanel__media"><img src="assets/img/above-knee.jpg" alt="Diz üstü protez ile hareket özgürlüğü" loading="lazy" /></div>
+              <div class="tabpanel__body">
+                <h3>Hassas Denge ve Hareket Özgürlüğü</h3>
+                <p>Eğimli arazilerde, engebeli yollarda ve merdivenlerde vücut ağırlığınızı anlık olarak sönümleyen akıllı sistemler. Güvenliği zirveye çıkararak adımlarınızdaki tereddütü tamamen yok eder.</p>
+                <a class="link" href="#quote" data-track="cta_product">Ücretsiz teklif al</a>
+              </div>
             </div>
-          </article>
-          <article class="pcard pcard--feat">
-            <div class="pcard__media"><img src="assets/img/silicone-foot.jpg" alt="Silikon ayak protezi" loading="lazy" /></div>
-            <div class="pcard__body">
-              <span class="pcard__tag">Estetik + fonksiyonel</span>
-              <h3>Silikon Ayak</h3>
-              <p>Parmak ve kısmi ayak kayıpları için cilt tonuna uygun, gerçekçi silikon. Tek günde ölçü, hızlı dönüş.</p>
-              <a class="link" href="#silicone" data-track="cta_product">Silikon işçiliğini gör</a>
+            <div class="tabpanel" role="tabpanel" id="panel-2" aria-labelledby="tab-2" data-panel="2" hidden>
+              <div class="tabpanel__media"><img src="assets/img/silicone-foot.jpg" alt="Kişiye özel silikon estetik protez" loading="lazy" /></div>
+              <div class="tabpanel__body">
+                <h3>Kişiye Özel Cilt Tonu ve Kusursuz Estetik</h3>
+                <p>Kısmi ayak ve parmak kayıplarında, tamamen sizin ten renginize, damar yapınıza ve anatominize özel üretilen yüksek estetikli çözümler. Dışarıdan bakıldığında asla fark edilmeyen bir bütünlük sağlar.</p>
+                <a class="link" href="#silicone" data-track="cta_product">Silikon işçiliğini gör</a>
+              </div>
             </div>
-          </article>
-          <article class="pcard pcard--feat">
-            <div class="pcard__media pcard__media--contain"><img src="assets/img/bionic-leg.jpg" alt="Biyonik mikroişlemcili protez bacak" loading="lazy" /></div>
-            <div class="pcard__body">
-              <span class="pcard__tag">İleri teknoloji</span>
-              <h3>Biyonik / Mikroişlemci</h3>
-              <p>Ottobock C-Leg ve Genium X3/X4 — sensörler her adıma uyum sağlar; daha güvenli, doğal ve az yorucu yürüyüş.</p>
-              <a class="link" href="#bionic" data-track="cta_product">Biyoniği keşfet</a>
+            <div class="tabpanel" role="tabpanel" id="panel-3" aria-labelledby="tab-3" data-panel="3" hidden>
+              <div class="tabpanel__media"><img src="assets/img/bionic-leg.jpg" alt="Biyonik mikroişlemcili protez teknolojisi" loading="lazy" /></div>
+              <div class="tabpanel__body">
+                <h3>Zihinden Adımlara Kesintisiz Güç</h3>
+                <p>Ottobock C-Leg ve Genium gibi dünya lideri akıllı sensör teknolojileri, her saniye hareket hızınızı ve zemin açısını algılar. Sizi yormayan, biyolojik bacağa en yakın protez deneyimi.</p>
+                <a class="link" href="#bionic" data-track="cta_product">Biyoniği keşfet</a>
+              </div>
             </div>
-          </article>
+          </div>
         </div>
       </div>
     </section>
@@ -612,6 +618,6 @@
     </a>
   </nav>
 
-  <script src="js/main.js?v=13"></script>
+  <script src="js/main.js?v=14"></script>
 </body>
 </html>

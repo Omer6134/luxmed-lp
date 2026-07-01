@@ -82,6 +82,36 @@
     if (playBtn) playBtn.addEventListener('click', playSilicone);
   }
 
+  /* ---- 4c) Ürün sekmeleri (tabs) ---- */
+  var tabsNav = document.querySelector('.tabs__nav');
+  if (tabsNav) {
+    var tabButtons = Array.prototype.slice.call(tabsNav.querySelectorAll('.tabs__tab'));
+    var tabPanels = Array.prototype.slice.call(document.querySelectorAll('.tabpanel'));
+    function selectTab(idx) {
+      tabButtons.forEach(function (b, i) {
+        var on = i === idx;
+        b.classList.toggle('is-active', on);
+        b.setAttribute('aria-selected', on ? 'true' : 'false');
+      });
+      tabPanels.forEach(function (p, i) {
+        var on = i === idx;
+        p.classList.toggle('is-active', on);
+        if (on) { p.removeAttribute('hidden'); } else { p.setAttribute('hidden', ''); }
+      });
+      track('product_tab_' + idx);
+    }
+    tabButtons.forEach(function (b, i) {
+      b.addEventListener('click', function () { selectTab(i); });
+      b.addEventListener('keydown', function (e) {
+        var dir = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
+        if (!dir) return;
+        e.preventDefault();
+        var next = (i + dir + tabButtons.length) % tabButtons.length;
+        tabButtons[next].focus(); selectTab(next);
+      });
+    });
+  }
+
   /* ---- 5) Dönüşüm izleme iskeleti ---- */
   function track(eventName) {
     if (typeof window.gtag === 'function') window.gtag('event', eventName, { event_category: 'lead' });
