@@ -767,7 +767,11 @@ a  { color: var(--green); text-decoration: none; }
   .tabpanel { grid-template-columns: 1fr 1fr; }
   .spot { grid-template-columns: 1fr 1fr; }
   .spot--rev .spot__media { order: 2; }
-  .journey__grid { grid-template-columns: 0.85fr 1.15fr; align-items: center; }
+  .journey__grid { grid-template-columns: 0.85fr 1.15fr; align-items: stretch; }
+  /* 3 adım videoyla eşit boyda: yüksekliği doldur */
+  .journey__steps { display: flex; flex-direction: column; height: 100%; }
+  .journey__grid .jstep:not(:last-child) { flex: 1 1 auto; padding-bottom: clamp(2.5rem, 3vw, 4rem); }
+  .journey__grid .jstep:last-child { flex: 0 0 auto; }
   .team-grid { grid-template-columns: 2fr 3fr; }
   .quote { grid-template-columns: 1.1fr 0.9fr; }
   .location { grid-template-columns: 1fr 1fr; }
