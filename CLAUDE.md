@@ -69,7 +69,7 @@ tasarımlarını beğenmedi. Özgün, premium klinik his. Emoji ikon kullanma; *
     "%100 iade" güven notu + buton **"Bilgi ve Fiyat Al" → WhatsApp** (ön-dolu: "Silikon protezler
     hakkında bilgi almak istiyorum").
   - **#solutions — "Protez Bacak Çeşitleri":** belirgin **segment toggle** sekmeler (aktif yeşil dolgulu).
-    Sıra: **Silikon (açılışta aktif)** · Diz Altı · Diz Üstü · Biyonik. Her panel: sol beyaz-zemin
+    Sıra: **Diz Altı (açılışta aktif)** · Diz Üstü · Silikon · Biyonik. Her panel: sol beyaz-zemin
     (#F1EADC) ürün görseli + sağ metin.
   - **#bionic — "Biyonik & mikroişlemcili" (koyu yeşil):** sessiz video + gold ✓ checklist + gold CTA.
   - **#team — "Arkanızdaki Güçlü Ekip":** asimetrik büyük foto + mikro sayaç (15+ / 40+).
