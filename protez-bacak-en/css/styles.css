@@ -421,31 +421,28 @@ a  { color: var(--green); text-decoration: none; }
 
 .tabs { margin-top: clamp(2.2rem, 4vw, 3.4rem); }
 
-/* Metin sekmeleri — ince dikey çizgilerle ayrılmış saf başlıklar */
+/* Segment toggle sekmeler — belirgin (süreç toggle ile tutarlı) */
 .tabs__nav {
-  display: flex; flex-wrap: wrap; justify-content: center;
-  gap: clamp(1rem, 3vw, 2.4rem);
-  border-bottom: 1px solid var(--line);
-  padding-bottom: 0; margin-bottom: clamp(2rem, 4vw, 3rem);
+  display: flex; flex-wrap: wrap; gap: 4px;
+  width: 100%; max-width: 880px; margin: 0 auto clamp(2rem, 4vw, 3rem);
+  background: var(--paper-2); border: 1px solid var(--line);
+  border-radius: 20px; padding: 5px;
 }
 .tabs__tab {
-  position: relative; appearance: none; background: none; border: 0; cursor: pointer;
-  font-family: var(--sans); font-size: clamp(0.9rem, 1.4vw, 1.02rem);
-  letter-spacing: 0.01em; color: rgba(20,33,31,0.42); font-weight: 500;
-  padding: 0 0 1rem; transition: color .2s ease;
+  flex: 1 1 calc(50% - 4px); /* mobil: 2×2 */
+  appearance: none; border: 0; background: transparent; cursor: pointer;
+  display: inline-flex; align-items: center; justify-content: center; text-align: center;
+  font-family: var(--sans); font-size: clamp(0.85rem, 1.3vw, 0.98rem);
+  font-weight: 600; line-height: 1.2; color: var(--ink-soft);
+  padding: 0.8em 1rem; border-radius: 14px;
+  transition: background .2s ease, color .2s ease;
 }
-.tabs__tab + .tabs__tab::before {
-  content: ""; position: absolute; left: calc(-1 * clamp(0.5rem, 1.5vw, 1.2rem));
-  top: 0.1em; bottom: 0.9rem; width: 1px; background: var(--line-2);
+.tabs__tab:hover { color: var(--ink); }
+.tabs__tab.is-active {
+  background: var(--green); color: #fff; font-weight: 700;
+  box-shadow: 0 6px 16px rgba(15,61,59,0.22);
 }
-.tabs__tab::after {
-  content: ""; position: absolute; left: 0; right: 0; bottom: -1px; height: 2px;
-  background: #C5A880; transform: scaleX(0); transform-origin: center;
-  transition: transform .25s ease;
-}
-.tabs__tab:hover { color: rgba(20,33,31,0.72); }
-.tabs__tab.is-active { color: var(--green); font-weight: 700; }
-.tabs__tab.is-active::after { transform: scaleX(1); }
+@media (min-width: 880px) { .tabs__tab { flex: 1 1 0; } } /* masaüstü: tek sıra 4 segment */
 
 /* Panel — 2 sütun editöryel galeri */
 .tabpanel { display: grid; grid-template-columns: 1fr; gap: clamp(1.6rem, 4vw, 3.6rem); align-items: center; }
