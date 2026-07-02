@@ -547,13 +547,41 @@ a  { color: var(--green); text-decoration: none; }
 #patients .section__head .lead { color: var(--ink-soft); }
 @media (min-width: 920px) { #patients .section__head h2 { white-space: nowrap; } }
 
-.reels { display: grid; grid-template-columns: repeat(2, 1fr); gap: clamp(0.7rem, 2vw, 1.2rem); }
+/* Tek satır carousel: full-bleed scroller + scroll-snap */
+.reels-wrap { position: relative; width: 100vw; margin-inline: calc(50% - 50vw); }
+.reels {
+  --reel-gap: clamp(0.7rem, 2vw, 1.1rem);
+  display: flex; gap: var(--reel-gap);
+  overflow-x: auto; overflow-y: hidden;
+  scroll-snap-type: x mandatory; scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  padding-inline: clamp(1rem, 4vw, 2rem); padding-block: 12px 34px;
+  scrollbar-width: none;
+}
+.reels::-webkit-scrollbar { display: none; }
 .reel {
-  position: relative; display: block; border-radius: 18px; overflow: hidden;
+  position: relative; flex: 0 0 auto; scroll-snap-align: center;
+  width: 80vw; max-width: 340px;
+  border-radius: 18px; overflow: hidden;
   aspect-ratio: 9 / 16; background: #06110f; isolation: isolate;
   box-shadow: 0 16px 38px rgba(15,61,59,0.20);
   transition: transform .35s cubic-bezier(.2,.7,.2,1), box-shadow .35s ease;
 }
+/* Yuvarlak oklar (yalnız kontrol) */
+.reels-nav {
+  position: absolute; top: calc(50% - 23px); z-index: 3;
+  width: 46px; height: 46px; border-radius: 50%;
+  display: grid; place-items: center;
+  background: rgba(255,255,255,0.92); color: var(--ink);
+  border: 1px solid var(--line); box-shadow: 0 6px 20px rgba(15,61,59,0.18);
+  cursor: pointer; transition: background .2s ease, color .2s ease, transform .15s ease;
+}
+.reels-nav svg { width: 22px; height: 22px; }
+.reels-nav:hover { background: var(--clay); color: #1a1208; }
+.reels-nav:active { transform: scale(0.94); }
+.reels-nav--prev { left: clamp(0.5rem, 2vw, 1.4rem); }
+.reels-nav--next { right: clamp(0.5rem, 2vw, 1.4rem); }
+.reels-nav[hidden] { display: none; }
 .reel:hover { transform: translateY(-5px); box-shadow: 0 26px 54px rgba(15,61,59,0.32); }
 .reel__thumb { width: 100%; height: 100%; object-fit: cover; transition: transform .6s cubic-bezier(.2,.7,.2,1); }
 .reel:hover .reel__thumb { transform: scale(1.06); }
@@ -670,8 +698,12 @@ a  { color: var(--green); text-decoration: none; }
 @media (min-width: 680px) {
   .reviews-grid { grid-template-columns: repeat(3, 1fr); }
 }
+@media (min-width: 920px) {
+  /* Masaüstü: 4 dikey video full-bleed alanda ortalı, yükseklik sınırlı */
+  .reels { justify-content: center; }
+  .reel { flex-basis: clamp(230px, 22vw, 300px); width: auto; max-width: none; scroll-snap-align: start; }
+}
 @media (min-width: 760px) {
-  .reels { grid-template-columns: repeat(4, 1fr); }
   /* Bento asimetrik puzzle: sol 2 geniş kart (garanti + hizmet) + sağ dikey teknoloji */
   .bento { grid-template-columns: repeat(3, 1fr); }
   .bento__lg   { grid-column: 1 / 3; grid-row: 1; }

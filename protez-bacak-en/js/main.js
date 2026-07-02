@@ -57,6 +57,35 @@
     window.addEventListener('resize', function () { if (window.innerWidth >= 920) closeNav(); });
   }
 
+  /* ---- 2c) Instagram reels carousel (oklar + otomatik gizle) ---- */
+  var reelsTrack = document.getElementById('reelsTrack');
+  var reelsPrev = document.querySelector('.reels-nav--prev');
+  var reelsNext = document.querySelector('.reels-nav--next');
+  if (reelsTrack && reelsPrev && reelsNext) {
+    function reelStep() {
+      var first = reelsTrack.querySelector('.reel');
+      var cs = getComputedStyle(reelsTrack);
+      var gap = parseFloat(cs.columnGap || cs.gap) || 0;
+      return first ? first.getBoundingClientRect().width + gap : reelsTrack.clientWidth;
+    }
+    function updateArrows() {
+      var overflow = reelsTrack.scrollWidth > reelsTrack.clientWidth + 4;
+      var atStart = reelsTrack.scrollLeft <= 2;
+      var atEnd = reelsTrack.scrollLeft >= reelsTrack.scrollWidth - reelsTrack.clientWidth - 2;
+      reelsPrev.hidden = !overflow || atStart;
+      reelsNext.hidden = !overflow || atEnd;
+    }
+    reelsPrev.addEventListener('click', function () { reelsTrack.scrollBy({ left: -reelStep(), behavior: 'smooth' }); });
+    reelsNext.addEventListener('click', function () { reelsTrack.scrollBy({ left: reelStep(), behavior: 'smooth' }); });
+    var reelTick = false;
+    reelsTrack.addEventListener('scroll', function () {
+      if (reelTick) return; reelTick = true;
+      window.requestAnimationFrame(function () { updateArrows(); reelTick = false; });
+    }, { passive: true });
+    window.addEventListener('resize', updateArrows, { passive: true });
+    updateArrows();
+  }
+
   /* ---- 3) Scroll-reveal ---- */
   var reveals = document.querySelectorAll('[data-reveal]');
   if ('IntersectionObserver' in window && reveals.length) {
