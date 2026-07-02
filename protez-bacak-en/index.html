@@ -21,7 +21,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" />
 
-  <link rel="stylesheet" href="css/styles.css?v=29" />
+  <link rel="stylesheet" href="css/styles.css?v=30" />
   <script>document.documentElement.className += ' js';</script>
 
   <!-- =========================================================
@@ -161,18 +161,39 @@
       <div class="container">
         <div class="spot spot--rev">
           <div class="spot__media">
-            <div class="video-embed" id="siliconeEmbed">
-              <video id="siliconeVideo" preload="none" playsinline poster="assets/video/silicone-vertical-poster.jpg?v=2" data-src="assets/video/silicone-vertical.mp4"></video>
-              <button class="video-embed__play" type="button" aria-label="Videoyu sesli oynat" data-track="silicone_video_play">
-                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
-              </button>
+            <div class="silicone-media">
+              <div class="video-embed" id="siliconeEmbed">
+                <video id="siliconeVideo" preload="none" playsinline poster="assets/video/silicone-vertical-poster.jpg?v=2" data-src="assets/video/silicone-vertical.mp4"></video>
+                <button class="video-embed__play" type="button" aria-label="Videoyu sesli oynat" data-track="silicone_video_play">
+                  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+                </button>
+              </div>
+              <span class="guarantee-seal" aria-label="%100 iade garantisi">
+                <span class="guarantee-seal__pct">%100</span>
+                <span class="guarantee-seal__txt">İADE<br>GARANTİSİ</span>
+              </span>
             </div>
           </div>
           <div class="spot__body" data-reveal>
-            <span class="badge-pill">👑 En Çok Tercih Edilen Ürün</span>
-            <h2>60 Dakikada Ölçü</h2>
-            <p class="lead">Tüm ölçü ve analiz işlemlerinizi sadece 1 saat içinde tamamlıyoruz. İşleminiz bittiğinde siz güvenle evinize dönerken, biz laboratuvarımızda kusursuz üretim sürecine başlıyoruz.</p>
-            <a class="btn btn--primary btn--lg" href="#quote" data-track="cta_silicone">Bilgi ve Fiyat Al</a>
+            <span class="eyebrow">Silikon Estetik Protezler</span>
+            <h2>Gerçeğinden <em>Ayırt Edilemez</em></h2>
+            <p class="lead">Bacak, ayak-parmak ve Chopart silikon protezlerinizi cilt tonunuza, damar yapınıza, dokunuza ve kıllarınıza kadar birebir üretiyoruz. Dünyanın dört bir yanından gelen hastalar, fark edilmeyen bu gerçekçilik için Luxmed'i tercih ediyor.</p>
+            <ul class="silicone-feats">
+              <li>
+                <span class="sfeat__ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.6 5.4L19 10l-5.4 1.6L12 17l-1.6-5.4L5 10l5.4-1.6z"/><path d="M19 15l.7 2.3L22 18l-2.3.7L19 21l-.7-2.3L16 18l2.3-.7z"/></svg></span>
+                <div><h3>Doku ve Kıllara Kadar Detay</h3><p>Cilt dokusu, damarlar ve kıllar dahil her ayrıntı elle işlenir.</p></div>
+              </li>
+              <li>
+                <span class="sfeat__ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2s6 6.6 6 11a6 6 0 0 1-12 0c0-4.4 6-11 6-11z"/></svg></span>
+                <div><h3>Kişiye Özel Cilt Tonu</h3><p>Ten renginize ve anatominize birebir; dışarıdan asla fark edilmez.</p></div>
+              </li>
+              <li>
+                <span class="sfeat__ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.1V12a10 10 0 1 1-5.9-9.1"/><path d="M22 4 12 14.1l-3-3"/></svg></span>
+                <div><h3>Bacak, Ayak/Parmak ve Chopart</h3><p>Kısmi ayak, parmak kayıpları ve Chopart seviyesi dahil tüm silikon çözümler.</p></div>
+              </li>
+            </ul>
+            <p class="silicone-note">Sonuçtan %100 memnun kalmazsanız, ücretinizi koşulsuz iade ediyoruz.</p>
+            <a class="btn btn--gold btn--lg" href="#quote" data-track="cta_silicone">Silikon Çözümünüzü Planlayın</a>
           </div>
         </div>
       </div>

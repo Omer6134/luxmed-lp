@@ -340,6 +340,36 @@ a  { color: var(--green); text-decoration: none; }
 .video-embed__play svg { width: 34px; height: 34px; margin-inline-start: 4px; }
 .video-embed.is-playing .video-embed__play { display: none; }
 
+/* ---- Silikon estetik showcase: garanti mührü + özellikler ---- */
+.silicone-media { position: relative; max-width: 460px; margin-inline: auto; }
+.guarantee-seal {
+  position: absolute; left: -14px; bottom: 22px; z-index: 4;
+  width: clamp(86px, 12vw, 116px); aspect-ratio: 1; border-radius: 50%;
+  background: var(--clay); color: #1a1208;
+  display: grid; place-content: center; text-align: center;
+  border: 3px solid rgba(255,255,255,0.92);
+  box-shadow: 0 14px 34px rgba(0,0,0,0.42);
+  transform: rotate(-9deg);
+}
+.guarantee-seal::before {
+  content: ""; position: absolute; inset: 6px; border-radius: 50%;
+  border: 1px dashed rgba(26,18,8,0.4);
+}
+.guarantee-seal__pct { font-family: var(--serif); font-weight: 600; font-size: clamp(1.35rem, 2.6vw, 1.85rem); line-height: 1; }
+.guarantee-seal__txt { font-size: clamp(0.52rem, 1.1vw, 0.62rem); font-weight: 800; letter-spacing: 0.09em; line-height: 1.2; margin-top: 3px; }
+
+#silicone h2 em { color: #E6BE74; font-style: italic; }
+.silicone-feats { list-style: none; padding: 0; margin: 1.6rem 0 0; display: grid; gap: 1.1rem; }
+.silicone-feats li { display: grid; grid-template-columns: auto 1fr; gap: 1rem; align-items: start; }
+.sfeat__ic {
+  width: 42px; height: 42px; border-radius: 12px; flex: none;
+  display: grid; place-items: center; background: rgba(243,235,217,0.12); color: #E6BE74;
+}
+.sfeat__ic svg { width: 22px; height: 22px; }
+.silicone-feats h3 { color: #fff; font-size: 1.08rem; margin: 0 0 0.15rem; }
+.silicone-feats p { color: rgba(243,235,217,0.78); font-size: 0.95rem; margin: 0; line-height: 1.5; }
+.silicone-note { font-size: 0.85rem; color: rgba(243,235,217,0.6); margin: 1.4rem 0 1.4rem; }
+
 /* ---- Socket / 1-day ---- */
 .feature__grid { display: grid; grid-template-columns: 1fr; gap: clamp(2rem, 5vw, 3.5rem); align-items: center; }
 .feature__media img,
