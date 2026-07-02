@@ -845,7 +845,7 @@ body.modal-open { overflow: hidden; }
 .footer__bottom { border-top: 1px solid rgba(243,235,217,0.15); margin-top: 2rem; padding-top: 1.4rem; font-size: 0.82rem; display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; justify-content: space-between; }
 
 /* Footer — ekip fotoğrafı, iletişim listesi, sosyal ikonlar */
-.footer__photo { margin-top: 1.3rem; max-width: 300px; width: 100%; border-radius: 14px; border: 1px solid rgba(243,235,217,0.14); box-shadow: 0 16px 34px rgba(0,0,0,0.28); }
+.footer__photo { margin-top: 1.4rem; max-width: 460px; width: 100%; border-radius: 16px; border: 1px solid rgba(243,235,217,0.14); box-shadow: 0 16px 34px rgba(0,0,0,0.28); }
 .fcontact { list-style: none; padding: 0; margin: 0 0 1.4rem; display: grid; gap: 0.9rem; }
 .fcontact .fc-lab { display: block; font-size: 0.7rem; letter-spacing: 0.05em; text-transform: uppercase; color: rgba(243,235,217,0.5); margin-bottom: 0.12rem; }
 .fcontact a { color: var(--paper); font-weight: 600; }
