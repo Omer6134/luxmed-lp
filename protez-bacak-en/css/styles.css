@@ -611,14 +611,11 @@ a  { color: var(--green); text-decoration: none; }
 .guar-panel.is-active { animation: tabfade .35s ease both; }
 .guar-panel__title { font-size: clamp(1.15rem, 2.2vw, 1.35rem); margin: 0 0 0.6rem; }
 .guar-panel p { color: var(--ink-soft); font-size: 1rem; line-height: 1.6; margin: 0; }
-.guar-brands { display: flex; flex-wrap: wrap; align-items: center; gap: clamp(0.6rem, 2vw, 1rem); margin-top: 1.3rem; }
-/* Logo-benzeri marka rozetleri — her marka kendi kurumsal rengiyle */
-.brand-chip { display: inline-flex; align-items: center; justify-content: center; background: var(--white); border: 1px solid var(--line); border-radius: 12px; padding: 0.55em 1em; font-weight: 800; font-size: clamp(1rem, 2.1vw, 1.28rem); line-height: 1; letter-spacing: -0.01em; white-space: nowrap; box-shadow: 0 2px 12px rgba(15,61,59,0.07); transition: transform .18s ease, box-shadow .18s ease; }
-.brand-chip:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(15,61,59,0.14); }
-.brand-chip--ottobock { color: #14181C; text-transform: lowercase; }
-.brand-chip--ossur { color: #14181C; }
-.brand-chip--fiorgentz { color: #0060A9; letter-spacing: 0.04em; font-size: clamp(0.82rem, 1.7vw, 1rem); }
-.brand-chip--streifeneder { color: #D51130; text-transform: lowercase; letter-spacing: 0.005em; }
+/* Gerçek marka logoları — eşit hücreli ızgara (masaüstü 4 sütun, mobil 2×2) */
+.guar-brands { display: grid; grid-template-columns: repeat(2, 1fr); gap: clamp(1.2rem, 3.5vw, 2rem); align-items: center; justify-items: center; margin-top: 1.6rem; }
+@media (min-width: 600px) { .guar-brands { grid-template-columns: repeat(4, 1fr); } }
+.brand-logo-img { height: clamp(22px, 4vw, 29px); width: auto; max-width: 100%; object-fit: contain; display: block; }
+.brand-logo-img--ossur { height: clamp(28px, 5vw, 38px); } /* iki satırlı logo (wordmark + slogan) biraz daha büyük */
 .guar-langs { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.2rem; }
 .lang-chip { border: 1px solid var(--line); border-radius: 999px; padding: 0.4em 0.9em; font-size: 0.85rem; font-weight: 600; color: var(--ink); background: var(--paper); }
 
