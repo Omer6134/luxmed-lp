@@ -570,6 +570,8 @@ a  { color: var(--green); text-decoration: none; }
 }
 .proc-panel[hidden] { display: none; }
 .proc-panel.is-active { animation: tabfade .35s ease both; }
+.proc-panel__title { font-size: clamp(1.2rem, 2vw, 1.5rem); line-height: 1.2; color: #1A2E26; margin: 0 0 0.6rem; }
+.proc-panel__sub { font-size: 0.72em; font-weight: 600; color: var(--clay-700); white-space: nowrap; }
 .model__intro { color: var(--ink-soft); margin: 0 0 1.4rem; font-size: 1rem; line-height: 1.6; }
 .model__steps { list-style: none; padding: 0; margin: 0; }
 .model__steps li { display: grid; grid-template-columns: auto 1fr; gap: 1.1rem; position: relative; padding-bottom: 1.9rem; }
