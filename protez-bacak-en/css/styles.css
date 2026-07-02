@@ -602,6 +602,19 @@ a  { color: var(--green); text-decoration: none; }
 @media (min-width: 560px) { .trust-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (min-width: 960px) { .trust-grid { grid-template-columns: repeat(4, 1fr); } }
 
+/* #why — "Size Verdiğimiz Güvenceler" segment toggle (ürün sekmesi görünümü, kendi kapsamı) */
+#guarTabs { max-width: 780px; margin-inline: auto; }
+.guar-toggle__btn { gap: 0.5em; }
+.guar-toggle__btn svg { width: 18px; height: 18px; flex: none; }
+.guar-panel { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius-lg); padding: clamp(1.5rem, 3vw, 2.2rem); }
+.guar-panel[hidden] { display: none; }
+.guar-panel.is-active { animation: tabfade .35s ease both; }
+.guar-panel__title { font-size: clamp(1.15rem, 2.2vw, 1.35rem); margin: 0 0 0.6rem; }
+.guar-panel p { color: var(--ink-soft); font-size: 1rem; line-height: 1.6; margin: 0; }
+.guar-brands { display: flex; flex-wrap: wrap; align-items: center; gap: clamp(1.4rem, 4vw, 2.6rem); margin-top: 1.2rem; }
+.guar-langs { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.2rem; }
+.lang-chip { border: 1px solid var(--line); border-radius: 999px; padding: 0.4em 0.9em; font-size: 0.85rem; font-weight: 600; color: var(--ink); background: var(--paper); }
+
 /* Uluslararası hasta süreci — tek bölüm, aç/kapa (toggle) */
 .proc { max-width: 680px; margin-inline: auto; }
 /* Ayrı, belirgin butonlar (Protez Bacak Çeşitleri sekmeleri gibi) */

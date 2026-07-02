@@ -21,7 +21,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" />
 
-  <link rel="stylesheet" href="css/styles.css?v=39" />
+  <link rel="stylesheet" href="css/styles.css?v=40" />
   <script>document.documentElement.className += ' js';</script>
 
   <!-- =========================================================
@@ -290,40 +290,60 @@
     <!-- ================= NEDEN LUXMED ================= -->
     <section class="section section--paper2" id="why">
       <div class="container">
-        <div class="section__head" data-reveal>
-          <h2>İstanbul'da dünya standartlarında uzman bakım</h2>
-          <p class="lead">Dünya lideri markalarla üretilen protezleriniz; uzun garanti ve satış sonrası bakımla, ilk mesajınızdan yıllar sonrasına kadar Luxmed güvencesinde.</p>
+        <div class="section__head section__head--center" data-reveal>
+          <h2>Size Verdiğimiz Güvenceler</h2>
+          <p class="lead">Protezinizden daha fazlasını; uzun garanti, ücretsiz bakım ve kendi dilinizde uzman desteğini bir arada sunuyoruz.</p>
         </div>
 
-        <div class="brandbar" data-reveal>
-          <span class="brandbar__label">Çalıştığımız küresel markalar</span>
-          <div class="brandbar__logos">
-            <span class="brandlogo brandlogo--low">ottobock</span>
-            <span class="brandlogo">Össur</span>
-            <span class="brandlogo brandlogo--fg">FIOR&nbsp;&amp;&nbsp;GENTZ</span>
+        <div class="tabs" id="guarTabs" data-reveal>
+          <div class="tabs__nav guar-toggle" role="tablist" aria-label="Luxmed güvenceleri">
+            <button class="tabs__tab guar-toggle__btn is-active" role="tab" aria-selected="true" id="gt-0" aria-controls="gp-0" data-guar="0" type="button">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
+              <span>Garanti &amp; Bakım</span>
+            </button>
+            <button class="tabs__tab guar-toggle__btn" role="tab" aria-selected="false" id="gt-1" aria-controls="gp-1" data-guar="1" type="button">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+              <span>Global Markalar</span>
+            </button>
+            <button class="tabs__tab guar-toggle__btn" role="tab" aria-selected="false" id="gt-2" aria-controls="gp-2" data-guar="2" type="button">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></svg>
+              <span>Uzman Ekip</span>
+            </button>
+            <button class="tabs__tab guar-toggle__btn" role="tab" aria-selected="false" id="gt-3" aria-controls="gp-3" data-guar="3" type="button">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 8 6 6"/><path d="m4 14 6-6 2-3"/><path d="M2 5h12"/><path d="M7 2h1"/><path d="m22 22-5-10-5 10"/><path d="M14 18h6"/></svg>
+              <span>5 Dilde Hizmet</span>
+            </button>
           </div>
-        </div>
 
-        <div class="trust-grid" data-reveal>
-          <div class="trust-card">
-            <span class="trust-card__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg></span>
-            <h3>5 Yıl Uluslararası Garanti</h3>
-            <p>Ürünlerinizde 5 yıl boyunca dünya genelinde geçerli servis, bakım ve parça garantisi.</p>
-          </div>
-          <div class="trust-card">
-            <span class="trust-card__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></span>
-            <h3>2 Yıl Ücretsiz Bakım</h3>
-            <p>Teslimattan sonra 2 yıl boyunca periyodik bakım ve ayarlarınız tamamen ücretsiz.</p>
-          </div>
-          <div class="trust-card">
-            <span class="trust-card__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></svg></span>
-            <h3>Orijinal &amp; Sertifikalı Ürünler</h3>
-            <p>Yalnızca faturalı, orijinal ve sertifikalı bileşenler kullanılır; asla taklit değil.</p>
-          </div>
-          <div class="trust-card">
-            <span class="trust-card__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></span>
-            <h3>Kendi Ülkenizde Servis</h3>
-            <p>Tedaviniz bittikten sonra bölgenizdeki hizmet ağımızla yıllarca yanınızdayız.</p>
+          <div class="tabs__panels">
+            <div class="guar-panel is-active" role="tabpanel" id="gp-0" aria-labelledby="gt-0" data-guarpanel="0">
+              <h3 class="guar-panel__title">2 Yıl Garanti + 2 Yıl Ücretsiz Bakım</h3>
+              <p>Protezleriniz 2 yıl uluslararası garanti kapsamındadır. Ayrıca teslimattan sonra 2 yıl boyunca tüm periyodik bakım ve ayarlarınız tamamen ücretsizdir — ilk günkü konforu yıllarca korursunuz.</p>
+            </div>
+            <div class="guar-panel" role="tabpanel" id="gp-1" aria-labelledby="gt-1" data-guarpanel="1" hidden>
+              <h3 class="guar-panel__title">Dünya Lideri Marka Ürünler</h3>
+              <p>Protezleriniz yalnızca orijinal, sertifikalı ve faturalı bileşenlerle üretilir; asla taklit değil. Dünya standardını belirleyen markalarla çalışıyoruz:</p>
+              <div class="guar-brands">
+                <span class="brandlogo brandlogo--low">ottobock</span>
+                <span class="brandlogo">Össur</span>
+                <span class="brandlogo brandlogo--fg">FIOR&nbsp;&amp;&nbsp;GENTZ</span>
+              </div>
+            </div>
+            <div class="guar-panel" role="tabpanel" id="gp-2" aria-labelledby="gt-2" data-guarpanel="2" hidden>
+              <h3 class="guar-panel__title">Sertifikalı Uzman Ekip</h3>
+              <p>Ottobock Almanya eğitimli, alanında sertifikalı hekim ve protez teknisyenlerinden oluşan multidisipliner ekibimiz; ölçüden uygulamaya kadar her adımda yanınızda. Deneyim ve teknolojiyi bir araya getiriyoruz.</p>
+            </div>
+            <div class="guar-panel" role="tabpanel" id="gp-3" aria-labelledby="gt-3" data-guarpanel="3" hidden>
+              <h3 class="guar-panel__title">Kendi Dilinizde Hizmet</h3>
+              <p>Ekibimiz sürecin her aşamasında ana dilinizde yanınızda; dil bariyeri yaşamadan, kendinizi güvende hissederek tedavi olursunuz.</p>
+              <div class="guar-langs">
+                <span class="lang-chip">Türkçe</span>
+                <span class="lang-chip">English</span>
+                <span class="lang-chip">العربية</span>
+                <span class="lang-chip">Русский</span>
+                <span class="lang-chip">Français</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -716,6 +736,6 @@
     </a>
   </nav>
 
-  <script src="js/main.js?v=35"></script>
+  <script src="js/main.js?v=36"></script>
 </body>
 </html>

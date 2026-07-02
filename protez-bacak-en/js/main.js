@@ -225,6 +225,36 @@
     });
   }
 
+  /* ---- 4e) Güvenceler toggle (#why) — KAPSAMA BAĞLI (global panel çakışması yok) ---- */
+  var guarTabs = document.getElementById('guarTabs');
+  if (guarTabs) {
+    var gBtns = Array.prototype.slice.call(guarTabs.querySelectorAll('.guar-toggle__btn'));
+    var gPanels = Array.prototype.slice.call(guarTabs.querySelectorAll('.guar-panel'));
+    function selectGuar(idx) {
+      gBtns.forEach(function (b, i) {
+        var on = i === idx;
+        b.classList.toggle('is-active', on);
+        b.setAttribute('aria-selected', on ? 'true' : 'false');
+      });
+      gPanels.forEach(function (p, i) {
+        var on = i === idx;
+        p.classList.toggle('is-active', on);
+        if (on) { p.removeAttribute('hidden'); } else { p.setAttribute('hidden', ''); }
+      });
+      track('guarantee_' + idx);
+    }
+    gBtns.forEach(function (b, i) {
+      b.addEventListener('click', function () { selectGuar(i); });
+      b.addEventListener('keydown', function (e) {
+        var dir = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
+        if (!dir) return;
+        e.preventDefault();
+        var next = (i + dir + gBtns.length) % gBtns.length;
+        gBtns[next].focus(); selectGuar(next);
+      });
+    });
+  }
+
   /* ---- 5) Dönüşüm izleme iskeleti ---- */
   function track(eventName) {
     if (typeof window.gtag === 'function') window.gtag('event', eventName, { event_category: 'lead' });
