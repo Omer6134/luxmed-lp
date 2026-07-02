@@ -7,6 +7,7 @@
   /* Palet — "warm clinical luxe": derin petrol-teal + sıcak krem + altın aksan */
   --paper:   #F3EBD9;   /* ana zemin — sıcak krem */
   --paper-2: #EADFC8;   /* alternatif kesit */
+  --sand:    #E7CF92;   /* koyu buğday sarısı — belirgin kesit (Instagram) */
   --white:   #FFFFFF;
   --ink:     #14211F;   /* ana metin — teal-siyah */
   --ink-soft:#54625C;   /* ikincil metin */
@@ -69,6 +70,7 @@ a  { color: var(--green); text-decoration: none; }
 .container { width: 100%; max-width: var(--maxw); margin-inline: auto; padding-inline: var(--gap); }
 .section { padding-block: var(--section-y); }
 .section--paper2 { background: var(--paper-2); }
+.section--sand { background: var(--sand); }
 .section--ink {
   background: var(--green); color: var(--paper); position: relative; isolation: isolate;
   background-image:
