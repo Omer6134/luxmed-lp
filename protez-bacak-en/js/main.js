@@ -86,6 +86,39 @@
     updateArrows();
   }
 
+  /* ---- 2e) Reel video modal (site içi Instagram oynatma) ---- */
+  var reelModal = document.getElementById('reelModal');
+  var reelModalFrame = document.getElementById('reelModalFrame');
+  var reelModalIg = document.getElementById('reelModalIg');
+  if (reelModal && reelModalFrame) {
+    function openReel(code) {
+      reelModalFrame.innerHTML = '<iframe src="https://www.instagram.com/reel/' + code + '/embed/" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowtransparency="true" scrolling="no" title="Instagram videosu"></iframe>';
+      if (reelModalIg) reelModalIg.href = 'https://www.instagram.com/reel/' + code + '/';
+      reelModal.classList.add('is-open');
+      reelModal.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('modal-open');
+    }
+    function closeReel() {
+      reelModal.classList.remove('is-open');
+      reelModal.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('modal-open');
+      reelModalFrame.innerHTML = '';
+    }
+    Array.prototype.forEach.call(document.querySelectorAll('.reel[data-reel]'), function (a) {
+      a.addEventListener('click', function (e) {
+        e.preventDefault();
+        openReel(a.getAttribute('data-reel'));
+        track('reel_open');
+      });
+    });
+    Array.prototype.forEach.call(reelModal.querySelectorAll('[data-reel-close]'), function (el) {
+      el.addEventListener('click', closeReel);
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && reelModal.classList.contains('is-open')) closeReel();
+    });
+  }
+
   /* ---- 3) Scroll-reveal ---- */
   var reveals = document.querySelectorAll('[data-reveal]');
   if ('IntersectionObserver' in window && reveals.length) {
