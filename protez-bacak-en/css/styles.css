@@ -737,8 +737,19 @@ body.modal-open { overflow: hidden; }
 .g-logo { font-family: var(--sans); font-weight: 700; font-size: 1.3rem; letter-spacing: -0.02em; }
 .g-stars { color: #e0a82e; letter-spacing: 2px; font-size: 1.1rem; }
 .g-reviewsnote { font-size: 0.85rem; color: var(--ink-soft); }
-.reviews-grid { display: grid; grid-template-columns: 1fr; gap: 1.2rem; }
+/* Mobil: kaydırmalı karusel (Instagram reels gibi); ≥680px'te grid'e döner */
+.reviews-grid {
+  display: flex; gap: 1rem;
+  width: 100vw; margin-inline: calc(50% - 50vw);
+  overflow-x: auto; overflow-y: hidden;
+  scroll-snap-type: x mandatory; scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  padding-inline: clamp(1rem, 6vw, 2rem); padding-block: 4px 12px;
+  scrollbar-width: none;
+}
+.reviews-grid::-webkit-scrollbar { display: none; }
 .rcard { background: var(--white); color: var(--ink); border: 1px solid var(--line); border-radius: var(--radius-lg); padding: 1.5rem 1.6rem; display: flex; flex-direction: column; }
+.reviews-grid > .rcard { flex: 0 0 auto; width: 84vw; max-width: 360px; scroll-snap-align: center; }
 .rcard p { color: var(--ink); }
 .rcard__top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.8rem; }
 .rcard .stars { color: #e0a82e; letter-spacing: 2px; font-size: 1rem; }
@@ -821,7 +832,8 @@ body.modal-open { overflow: hidden; }
 .social svg { width: 18px; height: 18px; }
 
 @media (min-width: 680px) {
-  .reviews-grid { grid-template-columns: repeat(3, 1fr); }
+  .reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; width: auto; margin-inline: 0; overflow: visible; padding: 0; }
+  .reviews-grid > .rcard { width: auto; max-width: none; }
 }
 @media (min-width: 920px) {
   /* Masaüstü: 4 dikey video full-bleed alanda ortalı, yükseklik sınırlı */
