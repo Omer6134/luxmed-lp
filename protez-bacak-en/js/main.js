@@ -11,8 +11,8 @@
   function loadHeroVideo() {
     if (!heroVideo) return;
     var desktop = mqDesktop.matches;
-    var src = desktop ? 'assets/video/hero-pc.mp4?v=4' : 'assets/video/hero-mobile.mp4';
-    var poster = desktop ? 'assets/video/hero-pc-poster.jpg?v=4' : 'assets/video/hero-mobile-poster.jpg';
+    var src = desktop ? 'assets/video/hero-pc.mp4?v=5' : 'assets/video/hero-mobile.mp4';
+    var poster = desktop ? 'assets/video/hero-pc-poster.jpg?v=5' : 'assets/video/hero-mobile-poster.jpg';
     if (heroVideo.getAttribute('data-current') === src) return;
     heroVideo.setAttribute('data-current', src);
     heroVideo.setAttribute('poster', poster);
