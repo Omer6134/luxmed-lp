@@ -162,6 +162,36 @@
     });
   }
 
+  /* ---- 4d) Süreç bölümü toggle (biz gelelim / siz gelin) ---- */
+  var procToggle = document.querySelector('.proc-toggle');
+  if (procToggle) {
+    var pBtns = Array.prototype.slice.call(procToggle.querySelectorAll('.proc-toggle__btn'));
+    var pPanels = Array.prototype.slice.call(document.querySelectorAll('.proc-panel'));
+    function selectProc(idx) {
+      pBtns.forEach(function (b, i) {
+        var on = i === idx;
+        b.classList.toggle('is-active', on);
+        b.setAttribute('aria-selected', on ? 'true' : 'false');
+      });
+      pPanels.forEach(function (p, i) {
+        var on = i === idx;
+        p.classList.toggle('is-active', on);
+        if (on) { p.removeAttribute('hidden'); } else { p.setAttribute('hidden', ''); }
+      });
+      track('process_model_' + idx);
+    }
+    pBtns.forEach(function (b, i) {
+      b.addEventListener('click', function () { selectProc(i); });
+      b.addEventListener('keydown', function (e) {
+        var dir = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
+        if (!dir) return;
+        e.preventDefault();
+        var next = (i + dir + pBtns.length) % pBtns.length;
+        pBtns[next].focus(); selectProc(next);
+      });
+    });
+  }
+
   /* ---- 5) Dönüşüm izleme iskeleti ---- */
   function track(eventName) {
     if (typeof window.gtag === 'function') window.gtag('event', eventName, { event_category: 'lead' });

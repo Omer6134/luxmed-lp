@@ -539,20 +539,27 @@ a  { color: var(--green); text-decoration: none; }
 .bento__ic--light { background: rgba(243,235,217,0.14); color: #F0C36B; }
 .bento__tall { justify-content: center; }
 
-/* Uluslararası hasta süreci — iki hizmet modeli kartı */
-.models { display: grid; grid-template-columns: 1fr; gap: clamp(1.2rem, 3vw, 1.8rem); }
-.model {
+/* Uluslararası hasta süreci — tek bölüm, aç/kapa (toggle) */
+.proc { max-width: 680px; margin-inline: auto; }
+.proc-toggle {
+  display: flex; gap: 4px; width: 100%; max-width: 440px;
+  margin: 0 auto clamp(1.6rem, 4vw, 2.4rem);
+  background: var(--paper-2); border: 1px solid var(--line); border-radius: 999px; padding: 5px;
+}
+.proc-toggle__btn {
+  flex: 1; appearance: none; border: 0; background: transparent; cursor: pointer;
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.5em;
+  padding: 0.7em 1rem; border-radius: 999px; font-weight: 600; font-size: 0.93rem;
+  color: var(--ink-soft); transition: background .2s ease, color .2s ease;
+}
+.proc-toggle__btn svg { width: 18px; height: 18px; flex: none; }
+.proc-toggle__btn.is-active { background: var(--green); color: #fff; box-shadow: 0 6px 16px rgba(15,61,59,0.22); }
+.proc-panel {
   background: var(--white); border: 1px solid var(--line); border-radius: var(--radius-lg);
-  padding: clamp(1.5rem, 3vw, 2.2rem); display: flex; flex-direction: column;
+  padding: clamp(1.5rem, 3vw, 2.2rem);
 }
-.model__head { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; }
-.model__ic {
-  width: 52px; height: 52px; border-radius: 14px; flex: none;
-  display: grid; place-items: center; background: rgba(15,61,59,0.08); color: var(--green);
-}
-.model__ic svg { width: 26px; height: 26px; }
-.model__tag { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--clay-700); }
-.model__head h3 { margin: 0.1rem 0 0; font-size: clamp(1.25rem, 2vw, 1.55rem); line-height: 1.15; }
+.proc-panel[hidden] { display: none; }
+.proc-panel.is-active { animation: tabfade .35s ease both; }
 .model__intro { color: var(--ink-soft); margin: 0 0 1.4rem; font-size: 1rem; line-height: 1.6; }
 .model__steps { list-style: none; padding: 0; margin: 0; }
 .model__steps li { display: grid; grid-template-columns: auto 1fr; gap: 1.1rem; position: relative; padding-bottom: 1.9rem; }
@@ -571,8 +578,7 @@ a  { color: var(--green); text-decoration: none; }
 .model__steps h4 { margin: 0 0 0.2rem; font-size: 1.05rem; }
 .model__steps p { margin: 0; color: var(--ink-soft); font-size: 0.94rem; line-height: 1.5; }
 .process__cta { text-align: center; display: grid; gap: 1rem; justify-items: center; margin-top: clamp(2rem, 4vw, 3rem); }
-.process__cta p { color: var(--ink-soft); font-size: 1.05rem; margin: 0; }
-@media (min-width: 860px) { .models { grid-template-columns: 1fr 1fr; align-items: stretch; } }
+.process__cta p { color: var(--ink-soft); font-size: 1.05rem; margin: 0; max-width: 52ch; }
 
 /* ---- Sosyal kanıt: Reels/TikTok tarzı dikey video hub (teal zemin) ---- */
 .section--ink .section__head .lead { color: rgba(243,235,217,0.82); }
