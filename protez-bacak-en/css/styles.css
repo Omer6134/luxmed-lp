@@ -554,14 +554,21 @@ a  { color: var(--green); text-decoration: none; }
 .model__tag { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--clay-700); }
 .model__head h3 { margin: 0.1rem 0 0; font-size: clamp(1.25rem, 2vw, 1.55rem); line-height: 1.15; }
 .model__intro { color: var(--ink-soft); margin: 0 0 1.4rem; font-size: 1rem; line-height: 1.6; }
-.model__steps { list-style: none; padding: 0; margin: 0; display: grid; gap: 1.1rem; }
-.model__steps li { display: grid; grid-template-columns: auto 1fr; gap: 0.9rem; align-items: start; }
-.mstep__n {
-  width: 30px; height: 30px; border-radius: 50%; flex: none;
-  display: grid; place-items: center; font-family: var(--serif); font-weight: 600; font-size: 0.95rem;
-  background: var(--clay); color: #1a1208;
+.model__steps { list-style: none; padding: 0; margin: 0; }
+.model__steps li { display: grid; grid-template-columns: auto 1fr; gap: 1.1rem; position: relative; padding-bottom: 1.9rem; }
+.model__steps li:last-child { padding-bottom: 0; }
+/* 1-2-3-4 arasında dikey bağlantı çizgisi (journey stili) */
+.model__steps li:not(:last-child)::before {
+  content: ""; position: absolute; inset-inline-start: 24px; top: 56px; bottom: 2px; width: 2px;
+  background: linear-gradient(var(--clay), rgba(224,162,60,0.15));
 }
-.model__steps h4 { margin: 0 0 0.15rem; font-size: 1.02rem; }
+.mstep__n {
+  width: 50px; height: 50px; border-radius: 50%; flex: none; z-index: 1;
+  display: grid; place-items: center; font-family: var(--serif); font-weight: 600; font-size: 1.35rem; line-height: 1;
+  background: var(--clay); color: #1a1208; box-shadow: 0 8px 20px rgba(224,162,60,0.38);
+}
+.model__steps li > div { padding-top: 0.45rem; }
+.model__steps h4 { margin: 0 0 0.2rem; font-size: 1.05rem; }
 .model__steps p { margin: 0; color: var(--ink-soft); font-size: 0.94rem; line-height: 1.5; }
 .process__cta { text-align: center; display: grid; gap: 1rem; justify-items: center; margin-top: clamp(2rem, 4vw, 3rem); }
 .process__cta p { color: var(--ink-soft); font-size: 1.05rem; margin: 0; }
