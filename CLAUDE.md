@@ -36,7 +36,7 @@ Toplam 9 sayfa: **protez bacak / protez kol / silikon protez** × **EN / RU / AR
 - Saf **statik HTML + CSS + vanilla JS**, build yok. Dosyalar: `index.html`, `css/styles.css`,
   `js/main.js`, `assets/{img,video}`.
 - **Cache-busting:** `index.html` içinde `css/styles.css?v=N` ve `js/main.js?v=N`. CSS/JS
-  değişince N'i artır. Şu an **styles.css v=43, main.js v=36**. Ayrıca değişen medyaya `?v=N`
+  değişince N'i artır. Şu an **styles.css v=47, main.js v=38**. Ayrıca değişen medyaya `?v=N`
   eklenir (ör. hero-pc.mp4?v=3, poster?v=3, silicone-vertical-poster.jpg?v=2, reel/genium/silicone img ?v).
 - **Dil:** Sayfa şu an **geçici Türkçe** (kullanıcı onayı için). **Yayından önce İngilizceye**
   çevrilecek. `lang="tr"` şimdilik.
@@ -79,10 +79,12 @@ tasarımlarını beğenmedi. Özgün, premium klinik his. Emoji ikon kullanma; *
   - **#process — "Uluslararası Hasta Süreci":** tek **toggle** — **Mobil Klinik** (biz size geliyoruz;
     aylık ülke ziyareti, 3 adım) ⇄ **İstanbul Express** (VIP sağlık turizmi, 4 adım). Büyük gold
     numaralı adım + çizgi. CTA "Ülkenize Geliyor muyuz? Öğrenin" → #quote.
-  - **#patients — Instagram Reels carousel:** 4 dikey video kartı (tek satır carousel + oklar).
-    Karta tıklayınca **SİTE İÇİ MODAL**'da Instagram `/embed/` iframe ile oynar (IG'ye yönlenmez);
-    modalda "Instagram'da Aç" linki, altta ghost "İnstagram'a Git". **Gerçek reeller:**
-    CwseNAbIrYP · Cx8T31todiN · DZpCwysIgti · C3KVCu2IQyK.
+  - **#patients — Hasta videoları carousel:** 4 dikey video kartı (tek satır carousel + oklar).
+    Karta tıklayınca **SİTE İÇİ MODAL**'da **kendi barındırdığımız** `assets/video/reel-1..4.mp4`
+    (sesli, `<video controls autoplay>`, tıklama jestinde `play()`) oynar — **Instagram YOK**.
+    Kartlar `data-video` ile bağlı; posterler `assets/img/reel-1..4.jpg` (videodan seçilen **en net kare**,
+    keskinlik ölçümüyle). Kaynak: `Videolar/hasta-1..4.mp4` (720x1280 H.264 CRF29 sıkıştırıldı).
+    Sıra hasta1→4 (ilk görünen hasta1). Altta ghost "İnstagram'a Git" (genel takip CTA'sı) kalır.
   - **#reviews (koyu yeşil):** Google yorum kartları (avatar+bayrak+protez tipi).
   - **#faq:** SSS. **#quote:** form (Ad, Telefon, E-posta, **Ülke dropdown**, Protez tipi, Mesaj)
     → Web3Forms; sağda "4 neden". **Footer:** "Luxmed Protez Kliniği" + iletişim + sosyal (2 sütun).
@@ -129,7 +131,7 @@ tasarımlarını beğenmedi. Özgün, premium klinik his. Emoji ikon kullanma; *
 - Web3Forms `access_key` · GA4 + Google Ads + Meta Pixel ID'leri · gerçek Google yorumları +
   isimler + ülke/protez ·
   FB/LinkedIn URL'leri · hasta foto/isim kullanım onayı · **sayfayı İngilizceye çevir**.
-- (Reels linkleri artık gerçek — tamam.) **Sonraki adım için önerilen eksik bölümler:** Öncesi/Sonrası
+- (Reels artık kendi barındırdığımız hasta videoları — Instagram bağımlılığı kaldırıldı.) **Sonraki adım için önerilen eksik bölümler:** Öncesi/Sonrası
   hasta galerisi · şeffaf fiyat notu · klinik konumu + harita (kullanıcı "şimdilik yok" dedi).
 
 ## 9) Önizleme/screenshot iş akışı (macOS)
