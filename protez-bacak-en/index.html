@@ -21,7 +21,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" />
 
-  <link rel="stylesheet" href="css/styles.css?v=26" />
+  <link rel="stylesheet" href="css/styles.css?v=27" />
   <script>document.documentElement.className += ' js';</script>
 
   <!-- =========================================================
@@ -122,35 +122,40 @@
     <section class="section journey" id="journey">
       <div class="container">
         <div class="section__head" data-reveal>
-          <h2><em>1 günde</em> yeni bir başlangıç</h2>
+          <span class="compare-chip"><span class="old">Geleneksel 5–7 gün</span><span class="arrow">→</span><span class="new">Luxmed'de 1 saat</span></span>
+          <h2>Kişiye özel soketiniz <em>1 saatte</em> hazır</h2>
+          <p class="lead">Yeni nesil soket teknolojimizle soketiniz haftalar yerine 1 saatte üretilir — hassasiyetten ödün vermeden, üstelik kendi ülkenizde.</p>
         </div>
         <div class="journey__grid">
           <div class="journey__media" data-reveal>
             <video muted loop playsinline preload="none" poster="assets/video/journey-poster.jpg" data-lazyvideo="assets/video/journey.mp4"></video>
           </div>
-          <ol class="journey__steps" data-reveal>
-            <li class="jstep">
-              <span class="jstep__num">01</span>
-              <div class="jstep__body">
-                <h3>Online Konsültasyon &amp; Randevu</h3>
-                <p>Formu doldurun, uzmanlarımızla online olarak durumunuzu ve ölçülerinizi değerlendirelim.</p>
-              </div>
-            </li>
-            <li class="jstep">
-              <span class="jstep__num">02</span>
-              <div class="jstep__body">
-                <h3>Biz Sizin Ülkenize Gelelim</h3>
-                <p>Uzman ekibimiz, gerekli tüm ekipmanlarla birlikte bulunduğunuz ülkeye ve şehre gelsin.</p>
-              </div>
-            </li>
-            <li class="jstep">
-              <span class="jstep__num">03</span>
-              <div class="jstep__body">
-                <h3>24 Saatte Protez Uygulaması</h3>
-                <p>Sadece 1 günde proteziniz titizlikle takılsın ve ilk adımlarınızı bizimle atın.</p>
-              </div>
-            </li>
-          </ol>
+          <div class="journey__col" data-reveal>
+            <ol class="journey__steps">
+              <li class="jstep">
+                <span class="jstep__num">01</span>
+                <div class="jstep__body">
+                  <h3>Dijital Ölçü, Saniyeler İçinde</h3>
+                  <p>Bacağınızın ölçüsü hassas dijital sistemle alınır; alçı kalıbı ve günlerce bekleme yok.</p>
+                </div>
+              </li>
+              <li class="jstep">
+                <span class="jstep__num">02</span>
+                <div class="jstep__body">
+                  <h3>1 Saatte Kişiye Özel Soket</h3>
+                  <p>Yeni nesil soket teknolojimizle soketiniz yerinde, yalnızca 1 saat içinde üretilir ve denenir.</p>
+                </div>
+              </li>
+              <li class="jstep">
+                <span class="jstep__num">03</span>
+                <div class="jstep__body">
+                  <h3>Kendi Ülkenizde</h3>
+                  <p>Ekibimiz bu teknolojiyi size getirir; seyahat etmeden, bulunduğunuz ülkede uygulanır.</p>
+                </div>
+              </li>
+            </ol>
+            <a class="btn btn--primary btn--lg journey__cta" href="#quote" data-track="cta_journey">Kendi ülkenizde 1 saatte soket — uygunluğunuzu öğrenin</a>
+          </div>
         </div>
       </div>
     </section>
