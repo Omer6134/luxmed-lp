@@ -36,7 +36,7 @@ Toplam 9 sayfa: **protez bacak / protez kol / silikon protez** × **EN / RU / AR
 - Saf **statik HTML + CSS + vanilla JS**, build yok. Dosyalar: `index.html`, `css/styles.css`,
   `js/main.js`, `assets/{img,video}`.
 - **Cache-busting:** `index.html` içinde `css/styles.css?v=N` ve `js/main.js?v=N`. CSS/JS
-  değişince N'i artır. Şu an **styles.css v=34, main.js v=35**. Ayrıca değişen medyaya `?v=N`
+  değişince N'i artır. Şu an **styles.css v=43, main.js v=36**. Ayrıca değişen medyaya `?v=N`
   eklenir (ör. hero-pc.mp4?v=3, poster?v=3, silicone-vertical-poster.jpg?v=2, reel/genium/silicone img ?v).
 - **Dil:** Sayfa şu an **geçici Türkçe** (kullanıcı onayı için). **Yayından önce İngilizceye**
   çevrilecek. `lang="tr"` şimdilik.
@@ -117,8 +117,9 @@ tasarımlarını beğenmedi. Özgün, premium klinik his. Emoji ikon kullanma; *
   ile kırpıldı)**. Poster ilk kare (uçak). Mobil `hero-mobile.mp4` dikey rehab (aynı).
 - **Diğer kaynak videolar** (`Videolar/`): Slider-dikey-video.mp4, hızlı-soket.mp4, dikey-silikon-protez.mp4,
   Silicone-prosthetic.mp4. Reel modal = Instagram `/embed/` iframe (indirme YOK).
-- **#why marka logoları:** şimdilik CSS metin wordmark (`.brandlogo`); gerçek Ottobock/Össur/Fior&Gentz
-  SVG/PNG gelince `assets/img/`e konup img'e çevrilebilir.
+- **#why marka logoları:** GERÇEK logo dosyaları eklendi — `assets/img/brand-{ottobock,ossur,fiorgentz,
+  streifeneder}.png` (içeriğe kırpıldı; ottobock açık zemini şeffaf yapıldı). `.guar-brands` eşit
+  hücreli ızgara (masaüstü 4 sütun, mobil 2×2), `.brand-logo-img`.
 - `journey.mp4` (hızlı-soket 0-5+8-12+18-27 birleşik), `silicone-vertical.mp4` (sesli, tıkla-oynat),
   `bionic.mp4` (Ottobock-bionic-leg 58–60.7sn, sessiz), `reel-1..4.jpg` (dikey reel kapakları),
   `luxmed-ekibi.webp` (ekip fotosu), `patient-1..3.jpg`, `logo-mark.png`.
@@ -126,7 +127,7 @@ tasarımlarını beğenmedi. Özgün, premium klinik his. Emoji ikon kullanma; *
 
 ## 8) Yayından önce doldurulacak PLACEHOLDER'lar
 - Web3Forms `access_key` · GA4 + Google Ads + Meta Pixel ID'leri · gerçek Google yorumları +
-  isimler + ülke/protez · **gerçek marka logo dosyaları** (Ottobock/Össur/Fior&Gentz — şu an metin) ·
+  isimler + ülke/protez ·
   FB/LinkedIn URL'leri · hasta foto/isim kullanım onayı · **sayfayı İngilizceye çevir**.
 - (Reels linkleri artık gerçek — tamam.) **Sonraki adım için önerilen eksik bölümler:** Öncesi/Sonrası
   hasta galerisi · şeffaf fiyat notu · klinik konumu + harita (kullanıcı "şimdilik yok" dedi).
