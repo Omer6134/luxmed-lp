@@ -539,6 +539,34 @@ a  { color: var(--green); text-decoration: none; }
 .bento__ic--light { background: rgba(243,235,217,0.14); color: #F0C36B; }
 .bento__tall { justify-content: center; }
 
+/* Uluslararası hasta süreci — iki hizmet modeli kartı */
+.models { display: grid; grid-template-columns: 1fr; gap: clamp(1.2rem, 3vw, 1.8rem); }
+.model {
+  background: var(--white); border: 1px solid var(--line); border-radius: var(--radius-lg);
+  padding: clamp(1.5rem, 3vw, 2.2rem); display: flex; flex-direction: column;
+}
+.model__head { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; }
+.model__ic {
+  width: 52px; height: 52px; border-radius: 14px; flex: none;
+  display: grid; place-items: center; background: rgba(15,61,59,0.08); color: var(--green);
+}
+.model__ic svg { width: 26px; height: 26px; }
+.model__tag { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--clay-700); }
+.model__head h3 { margin: 0.1rem 0 0; font-size: clamp(1.25rem, 2vw, 1.55rem); line-height: 1.15; }
+.model__intro { color: var(--ink-soft); margin: 0 0 1.4rem; font-size: 1rem; line-height: 1.6; }
+.model__steps { list-style: none; padding: 0; margin: 0; display: grid; gap: 1.1rem; }
+.model__steps li { display: grid; grid-template-columns: auto 1fr; gap: 0.9rem; align-items: start; }
+.mstep__n {
+  width: 30px; height: 30px; border-radius: 50%; flex: none;
+  display: grid; place-items: center; font-family: var(--serif); font-weight: 600; font-size: 0.95rem;
+  background: var(--clay); color: #1a1208;
+}
+.model__steps h4 { margin: 0 0 0.15rem; font-size: 1.02rem; }
+.model__steps p { margin: 0; color: var(--ink-soft); font-size: 0.94rem; line-height: 1.5; }
+.process__cta { text-align: center; display: grid; gap: 1rem; justify-items: center; margin-top: clamp(2rem, 4vw, 3rem); }
+.process__cta p { color: var(--ink-soft); font-size: 1.05rem; margin: 0; }
+@media (min-width: 860px) { .models { grid-template-columns: 1fr 1fr; align-items: stretch; } }
+
 /* ---- Sosyal kanıt: Reels/TikTok tarzı dikey video hub (teal zemin) ---- */
 .section--ink .section__head .lead { color: rgba(243,235,217,0.82); }
 /* Instagram bölümü başlıkları — açık zemine uyumlu (diğer bölümlerle aynı tonlar) */
