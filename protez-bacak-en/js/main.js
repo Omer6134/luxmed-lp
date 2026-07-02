@@ -267,6 +267,24 @@
     if (el && el.tagName !== 'BUTTON') track(el.getAttribute('data-track'));
   });
 
+  /* ---- 6a) Telefon: ülke koduna göre otomatik (intl-tel-input + IP geo) ---- */
+  var phoneIti = null;
+  var phoneInput = document.getElementById('f-phone');
+  if (phoneInput && window.intlTelInput) {
+    phoneIti = window.intlTelInput(phoneInput, {
+      initialCountry: 'auto',
+      geoIpLookup: function (success) {
+        fetch('https://ipwho.is/')
+          .then(function (r) { return r.json(); })
+          .then(function (d) { success(d && d.country_code ? d.country_code : 'tr'); })
+          .catch(function () { success('tr'); });
+      },
+      separateDialCode: true,
+      preferredCountries: ['tr', 'de', 'gb', 'fr', 'ru', 'sa', 'ae', 'us'],
+      utilsScript: 'https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/utils.js'
+    });
+  }
+
   /* ---- 6) Lead form (Web3Forms) ---- */
   var form = document.getElementById('quoteForm');
   var formWrap = document.getElementById('leadForm');
@@ -278,6 +296,10 @@
       var btn = form.querySelector('button[type="submit"]');
       var key = form.querySelector('[name="access_key"]').value;
       var data = Object.fromEntries(new FormData(form).entries());
+      if (phoneIti && typeof phoneIti.getNumber === 'function') {
+        var full = phoneIti.getNumber();
+        if (full) { data.phone = full; }
+      }
       function showSuccess() { if (formWrap) { formWrap.classList.add('is-sent'); window.scrollTo({ top: formWrap.offsetTop - 80, behavior: 'smooth' }); } }
       if (!key || key.indexOf('YOUR_') === 0) {
         console.warn('[form] Web3Forms access_key henüz ayarlanmadı — demo mod.');
