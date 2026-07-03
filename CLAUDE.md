@@ -36,7 +36,7 @@ Toplam 9 sayfa: **protez bacak / protez kol / silikon protez** × **EN / RU / AR
 - Saf **statik HTML + CSS + vanilla JS**, build yok. Dosyalar: `index.html`, `css/styles.css`,
   `js/main.js`, `assets/{img,video}`.
 - **Cache-busting:** `index.html` içinde `css/styles.css?v=N` ve `js/main.js?v=N`. CSS/JS
-  değişince N'i artır. Şu an **styles.css v=47, main.js v=38**. Ayrıca değişen medyaya `?v=N`
+  değişince N'i artır. Şu an **styles.css v=51, main.js v=38**. Ayrıca değişen medyaya `?v=N`
   eklenir (ör. hero-pc.mp4?v=3, poster?v=3, silicone-vertical-poster.jpg?v=2, reel/genium/silicone img ?v).
 - **Dil:** Sayfa şu an **geçici Türkçe** (kullanıcı onayı için). **Yayından önce İngilizceye**
   çevrilecek. `lang="tr"` şimdilik.

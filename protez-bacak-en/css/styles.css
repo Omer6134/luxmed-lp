@@ -272,7 +272,7 @@ a  { color: var(--green); text-decoration: none; }
 .trust-stat .lab { font-size: 0.82rem; color: var(--ink-soft); margin-top: 0.45rem; letter-spacing: 0.02em; }
 
 /* ---- Süreç — 3 adımda 1 günde (hero'yla uyumlu) ---- */
-.journey { background: var(--paper-2); }
+/* NOT: #journey zemini varsayılan --paper (almaşık ritim: silicone yeşil -> journey açık -> process koyu sarı) */
 .journey h2 em { font-style: italic; color: var(--clay-700); }
 /* Öncesi/Sonrası kıyas rozeti */
 .compare-chip {
